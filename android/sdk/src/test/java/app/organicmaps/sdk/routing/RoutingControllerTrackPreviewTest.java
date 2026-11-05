@@ -92,6 +92,53 @@ public class RoutingControllerTrackPreviewTest
   }
 
   @Test
+  public void acceptedChartPickBecomesTheEntry() throws ReflectiveOperationException
+  {
+    final EntryController controller = new EntryController(FollowTrackResult.Ok);
+    setState(controller, "PREPARE");
+    set(controller, "mBuildState", RoutingController.BuildState.BUILT);
+    set(controller, "mFollowedTrackEntryDistance", 100.0);
+    try (MockedStatic<Logger> ignored = mockStatic(Logger.class))
+    {
+      assertEquals(FollowTrackResult.Ok, controller.updateFollowedTrackEntryAt(250.0));
+    }
+    assertEquals(250.0, controller.getFollowedTrackEntryDistance(), 0.0);
+    assertTrue(controller.isPlanning());
+    assertTrue(controller.isBuilding());
+  }
+
+  @Test
+  public void refusedChartPickKeepsTheEntry() throws ReflectiveOperationException
+  {
+    try (MockedStatic<Logger> ignored = mockStatic(Logger.class))
+    {
+      for (FollowTrackResult result : FollowTrackResult.values())
+      {
+        if (result == FollowTrackResult.Ok)
+          continue;
+        final EntryController controller = new EntryController(result);
+        setState(controller, "PREPARE");
+        set(controller, "mBuildState", RoutingController.BuildState.BUILT);
+        set(controller, "mFollowedTrackEntryDistance", 100.0);
+        assertEquals(result, controller.updateFollowedTrackEntryAt(250.0));
+        assertEquals(result.toString(), 100.0, controller.getFollowedTrackEntryDistance(), 0.0);
+        assertEquals(RoutingController.BuildState.BUILT, controller.getBuildState());
+      }
+    }
+  }
+
+  @Test
+  public void entryIsUnknownOutsideATrackFollow() throws ReflectiveOperationException
+  {
+    final EntryController controller = new EntryController(FollowTrackResult.Ok);
+    set(controller, "mFollowedTrackEntryDistance", 100.0);
+    assertEquals(100.0, controller.getFollowedTrackEntryDistance(), 0.0);
+    // The core can end a follow without a cancel on the Java side, e.g. on a router type change.
+    controller.following = false;
+    assertTrue(Double.isNaN(controller.getFollowedTrackEntryDistance()));
+  }
+
+  @Test
   public void deletedTracksCancelOnlyTheCurrentPreview() throws ReflectiveOperationException
   {
     class Controller extends RoutingController
@@ -135,6 +182,29 @@ public class RoutingControllerTrackPreviewTest
         changed.invoke(controller);
         assertEquals(state.equals("PREPARE") && !exists, controller.cancelled);
       }
+    }
+  }
+
+  private static final class EntryController extends RoutingController
+  {
+    final FollowTrackResult result;
+    boolean following = true;
+
+    EntryController(FollowTrackResult result)
+    {
+      this.result = result;
+    }
+
+    @Override
+    public boolean isFollowingTrack()
+    {
+      return following;
+    }
+
+    @Override
+    FollowTrackResult updateCoreFollowedTrackEntryAt(double distanceMeters)
+    {
+      return result;
     }
   }
 
