@@ -1315,6 +1315,11 @@ JNIEXPORT jboolean Java_app_organicmaps_sdk_Framework_nativeIsFollowingTrack(JNI
   return frm()->GetRoutingManager().IsFollowingTrack();
 }
 
+JNIEXPORT jboolean Java_app_organicmaps_sdk_Framework_nativeCanNavigateTrack(JNIEnv *, jclass, jlong trackId)
+{
+  return frm()->GetRoutingManager().CanNavigateTrack(static_cast<kml::TrackId>(trackId));
+}
+
 JNIEXPORT jobject Java_app_organicmaps_sdk_Framework_nativeGetFollowedTrackInfo(JNIEnv * env, jclass)
 {
   auto const info = frm()->GetRoutingManager().GetFollowedTrackInfo();
@@ -1322,11 +1327,10 @@ JNIEXPORT jobject Java_app_organicmaps_sdk_Framework_nativeGetFollowedTrackInfo(
     return nullptr;
 
   static jclass const infoClass = jni::GetGlobalClassRef(env, "app/organicmaps/sdk/routing/FollowedTrackInfo");
-  static jmethodID const infoCtor = jni::GetConstructorID(env, infoClass, "(JLjava/lang/String;DZ)V");
+  static jmethodID const infoCtor = jni::GetConstructorID(env, infoClass, "(JLjava/lang/String;)V");
 
   jni::TScopedLocalRef const name(env, jni::ToJavaString(env, info->m_name));
-  return env->NewObject(infoClass, infoCtor, static_cast<jlong>(info->m_id), name.get(),
-                        static_cast<jdouble>(info->m_lengthM), static_cast<jboolean>(info->m_reversed));
+  return env->NewObject(infoClass, infoCtor, static_cast<jlong>(info->m_id), name.get());
 }
 
 JNIEXPORT jint Java_app_organicmaps_sdk_Framework_nativeGetRenderRouterType(JNIEnv *, jclass)
@@ -1399,6 +1403,11 @@ JNIEXPORT jobjectArray Java_app_organicmaps_sdk_Framework_nativeGetRouteJunction
   }
 
   return routing_jni::CreateJunctionInfoArray(env, result);
+}
+
+JNIEXPORT jboolean Java_app_organicmaps_sdk_Framework_nativeHasRouteAltitude(JNIEnv *, jclass)
+{
+  return frm()->GetRoutingManager().HasRouteAltitude();
 }
 
 JNIEXPORT jobject Java_app_organicmaps_sdk_Framework_nativeGetRouteAltitudeData(JNIEnv * env, jclass)
