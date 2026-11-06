@@ -174,7 +174,7 @@ bool RoutingSession::IsNavigable() const
 {
   CHECK_THREAD_CHECKER(m_threadChecker, ());
   return (m_state == SessionState::RouteNotStarted || m_state == SessionState::OnRoute ||
-          m_state == SessionState::RouteFinished);
+          m_state == SessionState::RouteFinished || IsOffTrack());
 }
 
 bool RoutingSession::IsBuilt() const
@@ -246,7 +246,12 @@ void RoutingSession::Reset()
 
 bool RoutingSession::IsTrackRoute() const
 {
-  return m_route && m_route->GetTrackStartDistanceMeters().has_value();
+  return m_route && m_route->IsTrack();
+}
+
+bool RoutingSession::IsOffTrack() const
+{
+  return m_state == SessionState::RouteNeedRebuild && IsTrackRoute();
 }
 
 void RoutingSession::ResetTrackGuidance()
@@ -279,6 +284,10 @@ SessionState RoutingSession::OnLocationPositionChanged(GpsInfo const & info)
   // build is cancelled because of traffic jam were downloaded. After that route rebuilding
   // happens. While the rebuilding may be called OnLocationPositionChanged(...)
   if (!IsRouteValid())
+    return m_state;
+
+  // Preview and uncertain fixes must not establish source progress, visits or arrivals.
+  if (IsTrackRoute() && (!m_isFollowing || info.m_horizontalAccuracy > m_routingSettings.m_matchingThresholdM))
     return m_state;
 
   m_turnNotificationsMgr.SetSpeedMetersPerSecond(info.m_speed);
@@ -339,7 +348,9 @@ SessionState RoutingSession::OnLocationPositionChanged(GpsInfo const & info)
 
     if (m_moveAwayCounter > kOnRouteMissedCount)
     {
-      m_passedDistanceOnRouteMeters += m_route->GetCurrentDistanceFromBeginMeters();
+      // A frozen track retains its prefix; adding it here would count that distance twice.
+      if (!IsTrackRoute())
+        m_passedDistanceOnRouteMeters += m_route->GetCurrentDistanceFromBeginMeters();
       if (m_reachedFollowedTrack)
       {
         if (m_isFollowing && m_turnNotificationsMgr.IsEnabled())
@@ -436,6 +447,16 @@ void RoutingSession::GetRouteFollowingInfo(FollowingInfo & info) const
     info = FollowingInfo();
     info.m_distToTarget = platform::Distance::CreateFormatted(m_route->GetTotalDistanceMeters());
     info.m_time = static_cast<int>(m_route->GetCurrentTimeToEndSec());
+    return;
+  }
+
+  // Clear guidance from the frozen iterator while retaining off-track metrics.
+  if (IsOffTrack())
+  {
+    info = FollowingInfo();
+    info.m_distToTarget = platform::Distance::CreateFormatted(m_route->GetCurrentDistanceToEndMeters());
+    info.m_time = static_cast<int>(m_route->GetCurrentTimeToEndSec());
+    info.m_completionPercent = GetCompletionPercent();
     return;
   }
 
@@ -550,11 +571,8 @@ void RoutingSession::GenerateNotifications(std::vector<std::string> & notificati
     return;
   }
 
-  // Voice turn notifications.
-  if (!m_routingSettings.m_soundDirection)
-    return;
-
-  if (!IsRouteValid() || !IsNavigable())
+  // Off-track metrics remain available, but turn guidance waits for a rejoin.
+  if (!m_routingSettings.m_soundDirection || !IsRouteValid() || !IsNavigable() || IsOffTrack())
     return;
 
   // Generate turns notifications.
@@ -592,16 +610,19 @@ void RoutingSession::AssignRoute(std::shared_ptr<RoutesResult> const & result, R
     return;
   }
 
+  // Promote the active alternative (RouteBase) to a followed Route.
+  auto route = std::make_shared<Route>(result->GetActive());
+  if (m_isFollowing && IsTrackRoute() && route->IsTrack())
+    route->CopyTrackMatchingState(*m_route);
+
   RemoveRoute();
   SetState(SessionState::RouteNotStarted);
   m_lastCompletionPercent = 0;
 
-  // Promote the active alternative (RouteBase) to a followed Route.
-  auto route = std::make_shared<Route>(result->GetActive());
   m_checkpoints.SetPointFrom(route->GetPoly().Front());
   route->SetRoutingSettings(m_routingSettings);
   m_route = route;
-  // A rejoin may have been matched on the retained route during calculation, even in preview.
+  // Navigation may have matched a rejoin on the retained route during calculation.
   m_reachedFollowedTrack = m_reachedFollowedTrack && IsTrackRoute();
 
   m_lastResult = result;
