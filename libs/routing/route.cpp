@@ -22,6 +22,32 @@ namespace
 {
 double constexpr kOnEndToleranceM = 10.0;
 double constexpr kSteetNameLinkMeters = 400.0;
+// Tolerate rounded projections at the entry and noise smaller than one metre.
+double constexpr kTrackProgressToleranceM = 1.0;
+// Allow sparse fixes without using arbitrarily old speed estimates.
+double constexpr kMaxTrackFixGapSeconds = 120.0;
+// Displacement underestimates along-track travel around bends.
+double constexpr kTrackDisplacementAllowanceFactor = 2.0;
+// Small GPS errors must not freeze matching on densely sampled recordings.
+double constexpr kMinTrackProgressAllowanceM = 5.0;
+// A stationary receiver's bearing does not establish traversal direction.
+double constexpr kMinTrackBearingSpeedMpS = 0.5;
+
+std::optional<m2::PointD> GetTrackDirection(location::GpsInfo const & info, m2::PointD const & movement,
+                                            double displacementM)
+{
+  double const speed = info.HasSpeed() ? info.m_speed : 0.0;
+  if (displacementM > kTrackProgressToleranceM && info.HasBearing() && speed >= kMinTrackBearingSpeedMpS)
+  {
+    double const angle = math::DegToRad(info.m_bearing);
+    return m2::PointD(sin(angle), cos(angle));
+  }
+  if (displacementM >
+          std::max(kMinTrackProgressAllowanceM, kTrackDisplacementAllowanceFactor * info.m_horizontalAccuracy) &&
+      movement.SquaredLength() > 0.0)
+    return movement / movement.Length();
+  return std::nullopt;
+}
 }  //  namespace
 
 std::string DebugPrint(RouteSegment::RoadNameInfo const & rni)
@@ -613,8 +639,46 @@ bool Route::MoveIterator(location::GpsInfo const & info)
 {
   m2::RectD const rect = mercator::MetersToXY(
       info.m_longitude, info.m_latitude, std::max(m_routingSettings.m_matchingThresholdM, info.m_horizontalAccuracy));
+  return IsTrack() ? MoveTrackIterator(info, rect) : m_poly.UpdateMatchingProjection(rect);
+}
 
-  return m_poly.UpdateMatchingProjection(rect);
+bool Route::MoveTrackIterator(location::GpsInfo const & info, m2::RectD const & rect)
+{
+  double const entryDistance = *GetTrackStartDistanceMeters();
+  double const tolerance = std::max(kTrackProgressToleranceM, info.m_horizontalAccuracy);
+  auto const position = mercator::FromLatLon(info.m_latitude, info.m_longitude);
+  double const currentDistance = m_poly.GetDistanceFromStartMeters();
+  bool matched = false;
+  // Prefer the approach over nearby later laps while it still matches the fix.
+  if (!m_trackJoined && entryDistance > 0.0)
+  {
+    matched = m_poly.UpdateTrackMatchingProjection(
+        {.m_positionRect = rect, .m_maxProgressM = entryDistance, .m_toleranceM = tolerance});
+  }
+  if (!matched)
+  {
+    auto const referencePoint = m_trackFix ? m_trackFix->m_point : m_poly.GetCurrentIter().m_pt;
+    double const displacement = mercator::DistanceOnEarth(referencePoint, position);
+    double const elapsed =
+        m_trackFix ? std::clamp(info.m_timestamp - m_trackFix->m_timestamp, 0.0, kMaxTrackFixGapSeconds) : 0.0;
+    double const speed = info.HasSpeed() ? info.m_speed : 0.0;
+    // Displacement supplies the window when no previous timestamp is available.
+    double const allowance = std::max(kTrackDisplacementAllowanceFactor * displacement, speed * elapsed) +
+                             std::max(kMinTrackProgressAllowanceM, info.m_horizontalAccuracy);
+    matched = m_poly.UpdateTrackMatchingProjection(
+        {.m_positionRect = rect,
+         .m_minProgressM = std::max(entryDistance, currentDistance - allowance),
+         .m_maxProgressM = std::max(entryDistance, currentDistance) + allowance,
+         .m_direction = m_trackFix ? GetTrackDirection(info, position - referencePoint, displacement) : std::nullopt,
+         .m_toleranceM = tolerance,
+         .m_advanceOnForwardChain = m_trackFix.has_value() && displacement > 0.0});
+  }
+  if (matched)
+  {
+    m_trackJoined = m_trackJoined || m_poly.GetDistanceFromStartMeters() >= entryDistance - kTrackProgressToleranceM;
+    m_trackFix = TrackFix{position, info.m_timestamp};
+  }
+  return matched;
 }
 
 double Route::GetPolySegAngle(size_t ind) const
@@ -666,6 +730,7 @@ bool Route::MatchLocationToRoute(location::GpsInfo & location, location::RouteMa
 
 bool Route::IsSubroutePassed(size_t subrouteIdx) const
 {
+  ASSERT(IsValid(), ());
   size_t const endSegmentIdx = GetSubrouteAttrs(subrouteIdx).GetEndSegmentIdx();
   // If all subroutes up to subrouteIdx are empty.
   if (endSegmentIdx == 0)
@@ -673,10 +738,21 @@ bool Route::IsSubroutePassed(size_t subrouteIdx) const
 
   size_t const segmentIdx = endSegmentIdx - 1;
   CHECK_LESS(segmentIdx, m_routeSegments.size(), ());
-  double const lengthMeters = m_routeSegments[segmentIdx].GetDistFromBeginningMeters();
   double const passedDistanceMeters = m_poly.GetDistanceFromStartMeters();
-  double const finishToleranceM =
-      segmentIdx == m_routeSegments.size() - 1 ? m_routingSettings.m_finishToleranceM : kOnEndToleranceM;
+  bool const isLast = segmentIdx + 1 == m_routeSegments.size();
+  double const finishToleranceM = isLast ? m_routingSettings.m_finishToleranceM : kOnEndToleranceM;
+  auto const trackStartDistance = GetTrackStartDistanceMeters();
+  if (trackStartDistance && isLast)
+  {
+    // Protect short loops from finishing at their first occurrence. Once confirmed
+    // source progress exceeds the finish tolerance, normal arrival tolerance
+    // also covers a dense final tail whose matching position can lag within GPS accuracy.
+    double const finalSegmentStartM = m_poly.GetLastNonZeroSegmentStartMeters();
+    double const distanceOnTrackM = passedDistanceMeters - *trackStartDistance;
+    if (passedDistanceMeters < finalSegmentStartM && distanceOnTrackM <= finishToleranceM)
+      return false;
+  }
+  double const lengthMeters = m_routeSegments[segmentIdx].GetDistFromBeginningMeters();
   return lengthMeters - passedDistanceMeters < finishToleranceM;
 }
 

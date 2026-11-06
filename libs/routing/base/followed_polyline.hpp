@@ -3,6 +3,7 @@
 #include "geometry/polyline2d.hpp"
 
 #include <limits>
+#include <optional>
 #include <vector>
 
 namespace routing
@@ -43,6 +44,7 @@ public:
   double GetTotalDistanceMeters() const;
   double GetDistanceFromStartMeters() const;
   double GetDistanceToEndMeters() const;
+  double GetLastNonZeroSegmentStartMeters() const;
   double GetDistFromCurPointToRoutePointMerc() const;
   double GetDistFromCurPointToRoutePointMeters() const;
 
@@ -74,6 +76,20 @@ public:
 
   /// \brief Updates projection to the closest matched segment if it's possible.
   bool UpdateMatchingProjection(m2::RectD const & posRect);
+  struct TrackMatchQuery
+  {
+    m2::RectD m_positionRect;
+    double m_minProgressM = 0.0;
+    double m_maxProgressM = 0.0;
+    std::optional<m2::PointD> m_direction;
+    double m_toleranceM = 0.0;
+    bool m_advanceOnForwardChain = false;
+  };
+
+  // Match within the inclusive progress window, preserving source occurrence on close projections.
+  // A changed fix can advance along a straight forward chain; observed corners allow forward
+  // tie-breaks. Failure leaves progress unchanged. Direction is a unit Mercator vector.
+  bool UpdateTrackMatchingProjection(TrackMatchQuery const & query);
 
   Iter UpdateProjection(m2::RectD const & posRect);
 
@@ -130,6 +146,8 @@ private:
 
   Iter GetBestMatchingProjection(m2::RectD const & posRect) const;
 
+  size_t FindNextNonZeroSegment(size_t segment) const;
+  size_t GetForwardChainEnd(double maxProgressM) const;
   void Update();
 
   m2::PolylineD m_poly;
@@ -138,7 +156,8 @@ private:
 
   /// Iterator with the current position. Position sets with UpdateProjection methods.
   Iter m_current;
-  size_t m_nextCheckpointIndex;
+  size_t m_nextCheckpointIndex = 0;
+  size_t m_lastNonZeroSegment = 0;
   /// Precalculated info for fast projection finding.
   std::vector<m2::ParametrizedSegment<m2::PointD>> m_segProj;
   /// Accumulated cache of segments length in meters.

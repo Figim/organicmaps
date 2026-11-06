@@ -5,11 +5,57 @@
 #include "base/assert.hpp"
 
 #include <algorithm>
+#include <cmath>
 #include <limits>
 
 namespace routing
 {
 using Iter = routing::FollowedPolyline::Iter;
+namespace
+{
+// Match equivalent projections within GPS uncertainty, with a sub-metre lower bound.
+double constexpr kMinSpatialToleranceM = 0.5;
+// Ignore small bearing differences when comparing source occurrences.
+double constexpr kDirectionAlignmentTolerance = 0.1;
+// Forward-only continuation applies to a near-straight source chain.
+double constexpr kForwardChainMinCosine = 0.9;
+
+struct TrackCandidate
+{
+  Iter m_iter;
+  double m_distanceM = 0.0;
+  double m_signedChangeM = 0.0;
+  double m_alignment = 0.0;
+  bool m_onForwardChain = false;
+  bool m_afterObservedTurn = false;
+
+  // Greedy preference in source order, not a strict ordering for sorting candidates.
+  bool PreferTo(TrackCandidate const & best, double toleranceM) const
+  {
+    if (!best.m_iter.IsValid())
+      return true;
+    // Within one forward occurrence, exact proximity advances dense samples.
+    if (m_onForwardChain && best.m_onForwardChain && m_signedChangeM > 0.0 && m_distanceM < best.m_distanceM)
+      return true;
+    double const spatialTolerance = std::max(kMinSpatialToleranceM, toleranceM);
+    if (m_distanceM < best.m_distanceM - spatialTolerance)
+      return true;
+    if (fabs(m_distanceM - best.m_distanceM) > spatialTolerance)
+      return false;
+    double const change = fabs(m_signedChangeM);
+    double const bestChange = fabs(best.m_signedChangeM);
+    if (change < bestChange - toleranceM)
+      return true;
+    if (fabs(change - bestChange) > toleranceM)
+      return false;
+    if (m_alignment > best.m_alignment + kDirectionAlignmentTolerance)
+      return true;
+    if (fabs(m_alignment - best.m_alignment) > kDirectionAlignmentTolerance)
+      return false;
+    return (m_afterObservedTurn && best.m_signedChangeM < 0.0) || change < bestChange;
+  }
+};
+}  // namespace
 
 Iter FollowedPolyline::Begin() const
 {
@@ -81,6 +127,7 @@ void FollowedPolyline::Swap(FollowedPolyline & rhs)
   m_segProj.swap(rhs.m_segProj);
   std::swap(m_current, rhs.m_current);
   std::swap(m_nextCheckpointIndex, rhs.m_nextCheckpointIndex);
+  std::swap(m_lastNonZeroSegment, rhs.m_lastNonZeroSegment);
 }
 
 void FollowedPolyline::Update()
@@ -95,12 +142,15 @@ void FollowedPolyline::Update()
   m_segProj.reserve(n);
 
   double dist = 0.0;
+  m_lastNonZeroSegment = 0;
   for (size_t i = 0; i < n; ++i)
   {
     m2::PointD const & p1 = m_poly.GetPoint(i);
     m2::PointD const & p2 = m_poly.GetPoint(i + 1);
 
     dist += mercator::DistanceOnEarth(p1, p2);
+    if (!p1.EqualDxDy(p2, mercator::kPointEqualityEps))
+      m_lastNonZeroSegment = i;
 
     m_segDistance.emplace_back(dist);
     m_segProj.emplace_back(p1, p2);
@@ -160,6 +210,92 @@ bool FollowedPolyline::UpdateMatchingProjection(m2::RectD const & posRect)
   }
 
   return false;
+}
+
+double FollowedPolyline::GetLastNonZeroSegmentStartMeters() const
+{
+  ASSERT(IsValid(), ());
+  return m_lastNonZeroSegment == 0 ? 0.0 : m_segDistance[m_lastNonZeroSegment - 1];
+}
+
+size_t FollowedPolyline::FindNextNonZeroSegment(size_t segment) const
+{
+  while (segment < m_segProj.size() &&
+         m_poly.GetPoint(segment).EqualDxDy(m_poly.GetPoint(segment + 1), mercator::kPointEqualityEps))
+    ++segment;
+  return segment;
+}
+
+size_t FollowedPolyline::GetForwardChainEnd(double maxProgressM) const
+{
+  size_t end = m_current.m_ind;
+  size_t const referenceIndex = FindNextNonZeroSegment(m_current.m_ind);
+  if (referenceIndex == m_segProj.size())
+    return end;
+  auto const reference = m_poly.GetPoint(referenceIndex + 1) - m_poly.GetPoint(referenceIndex);
+  for (size_t i = m_current.m_ind; i < m_segProj.size(); ++i)
+  {
+    if (i > 0 && m_segDistance[i - 1] > maxProgressM)
+      break;
+    auto const delta = m_poly.GetPoint(i + 1) - m_poly.GetPoint(i);
+    // A near-straight chain cannot complete a loop or skip a turnaround.
+    if (m2::DotProduct(reference, delta) < kForwardChainMinCosine * reference.Length() * delta.Length())
+      break;
+    end = i;
+  }
+  return end;
+}
+
+bool FollowedPolyline::UpdateTrackMatchingProjection(TrackMatchQuery const & query)
+{
+  ASSERT(m_current.IsValid(), ());
+  ASSERT_LESS(m_current.m_ind, m_segProj.size(), ());
+  ASSERT_GREATER_OR_EQUAL(query.m_minProgressM, 0.0, ());
+  ASSERT_LESS_OR_EQUAL(query.m_minProgressM, query.m_maxProgressM, ());
+  ASSERT_GREATER_OR_EQUAL(query.m_toleranceM, 0.0, ());
+  auto const currentDistance = GetDistanceFromStartMeters();
+  size_t const start =
+      std::lower_bound(m_segDistance.begin(), m_segDistance.end(), query.m_minProgressM) - m_segDistance.begin();
+  size_t const nextSegment = FindNextNonZeroSegment(m_current.m_ind + 1);
+  bool const confirmedTurn =
+      mercator::DistanceOnEarth(m_current.m_pt, m_poly.GetPoint(m_current.m_ind + 1)) <= query.m_toleranceM;
+  size_t const forwardEnd = query.m_advanceOnForwardChain ? GetForwardChainEnd(query.m_maxProgressM) : m_current.m_ind;
+  TrackCandidate best;
+  for (size_t i = start; i < m_segProj.size(); ++i)
+  {
+    double const segmentStart = i == 0 ? 0.0 : m_segDistance[i - 1];
+    if (segmentStart > query.m_maxProgressM)
+      break;
+    auto const & from = m_poly.GetPoint(i);
+    auto const delta = m_poly.GetPoint(i + 1) - from;
+    double const fraction =
+        delta.SquaredLength() > 0.0
+            ? std::clamp(m2::DotProduct(query.m_positionRect.Center() - from, delta) / delta.SquaredLength(), 0.0, 1.0)
+            : 0.0;
+    auto const point = from + delta * fraction;
+    double const progress = segmentStart + mercator::DistanceOnEarth(from, point);
+    if (progress < query.m_minProgressM || progress > query.m_maxProgressM ||
+        !query.m_positionRect.IsPointInside(point))
+      continue;
+    double const change = progress - currentDistance;
+    double const alignment =
+        query.m_direction && delta.SquaredLength() > 0.0
+            ? m2::DotProduct(delta, *query.m_direction) / delta.Length() * (change < 0.0 ? -1.0 : 1.0)
+            : 0.0;
+    TrackCandidate const candidate{
+        Iter(point, i),
+        mercator::DistanceOnEarth(point, query.m_positionRect.Center()),
+        change,
+        alignment,
+        query.m_advanceOnForwardChain && change >= 0.0 && i >= m_current.m_ind && i <= forwardEnd,
+        change > 0.0 && confirmedTurn && i <= nextSegment};
+    if (candidate.PreferTo(best, query.m_toleranceM))
+      best = candidate;
+  }
+  if (!best.m_iter.IsValid())
+    return false;
+  m_current = best.m_iter;
+  return true;
 }
 
 Iter FollowedPolyline::UpdateProjection(m2::RectD const & posRect)
