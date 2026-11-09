@@ -1229,6 +1229,34 @@ FollowTrackResult RoutingManager::UpdateFollowedTrackEntry()
                             true /* keepViewport */);
 }
 
+FollowTrackResult RoutingManager::UpdateFollowedTrackEntryAt(double distanceM)
+{
+  CHECK_THREAD_CHECKER(m_threadChecker, ());
+  if (!m_followSession)
+    return FollowTrackResult::NoTrack;
+  if (IsRouteBuilding() || IsRoutingFollowing())
+    return FollowTrackResult::Busy;
+  if (auto const result = CheckFollowedTrackSource(); result != FollowTrackResult::Ok)
+    return result;
+  if (!math::is_finite(distanceM))
+    return FollowTrackResult::InvalidSelection;
+
+  auto const trackId = m_followSession->m_info.m_id;
+  auto const * track = m_bmManager->GetTrack(trackId);
+  auto const distance = std::clamp(distanceM, 0.0, track->GetLengthMeters());
+  auto const entry = ResolveTrackEntry(m_followSession->m_source->m_geometry, track->GetPoint(distance), distance);
+  if (!entry)
+    return FollowTrackResult::InvalidSelection;
+  auto const result =
+      BuildFollowedTrack(m_followSession->m_source, *entry, m_followSession->m_info.m_profile, true /* keepViewport */);
+  if (result == FollowTrackResult::Ok)
+  {
+    auto editSession = m_bmManager->GetEditSession();
+    m_bmManager->SetElevationActivePoint(trackId, distance);
+  }
+  return result;
+}
+
 FollowTrackResult RoutingManager::SetFollowTrackProfile(RouterType type)
 {
   CHECK_THREAD_CHECKER(m_threadChecker, ());
