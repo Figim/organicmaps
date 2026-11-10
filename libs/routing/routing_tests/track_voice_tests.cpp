@@ -258,6 +258,45 @@ UNIT_CLASS_TEST(TrackVoiceTest, StartingAtTrackArmsDeparture)
   }
 }
 
+UNIT_CLASS_TEST(TrackVoiceTest, StartingPastEntryStaysOnTrack)
+{
+  for (double const start : {15.0, 19.0})
+  {
+    Build(start, 0);
+    Start();
+    RunOnGui([&]
+    {
+      for (double x = start; x < 200; x += 2)
+      {
+        Feed(x, 0);
+        TEST(m_session->IsOnRoute(), (start, x));
+      }
+    });
+    TEST(Notifications().empty(), ("Walking forward on the track must not announce departure", start));
+  }
+}
+
+UNIT_CLASS_TEST(TrackVoiceTest, TurningWithinEntryAccuracyJoinsTrack)
+{
+  for (double const shortBy : {2.0, 4.0})
+  {
+    Build(100, 0);
+    Start();
+    RunOnGui([&]
+    {
+      for (double x = 100; x > shortBy; x -= 2)
+        Feed(x, 0);
+      Feed(shortBy, 0);
+      for (double x = shortBy + 2; x < 200; x += 2)
+      {
+        Feed(x, 0);
+        TEST(m_session->IsOnRoute(), (shortBy, x));
+      }
+    });
+    TEST(Notifications().empty(), ("Turning within GPS accuracy must reach the track", shortBy));
+  }
+}
+
 UNIT_CLASS_TEST(TrackVoiceTest, ReachingTrackDropsPendingApproach)
 {
   Build(0, -100);
@@ -363,6 +402,57 @@ UNIT_CLASS_TEST(TrackVoiceTest, OnTrackRebuildKeepsConfirmedReach)
   Rebuild(200, 0);
   RunOnGui([&] { Depart(200, 0 /* fromY */, 40 /* firstOffset */); });
   TEST_EQUAL(Notifications(), std::vector<std::string>({kPhrase}), ());
+}
+
+UNIT_CLASS_TEST(TrackVoiceTest, OnTrackRebuildKeepsMatchingForward)
+{
+  Build();
+  Start();
+  RunOnGui([&]
+  {
+    Feed(200, 0);
+    TEST(m_session->IsOnRoute(), ());
+  });
+  Rebuild(200, 0);
+  RunOnGui([&]
+  {
+    for (double x = 202; x <= 500; x += 2)
+    {
+      Feed(x, 0);
+      TEST(m_session->IsOnRoute(), (x));
+      TEST_ALMOST_EQUAL_ABS(mercator::DistanceOnEarth(m_session->GetRoute()->GetCurrentIter().m_pt, Point(x, 0)), 0.0,
+                            1.0E-6, (x));
+    }
+  });
+  TEST(Notifications().empty(), ());
+}
+
+UNIT_CLASS_TEST(TrackVoiceTest, WindingTrackRebuildKeepsMatchingForward)
+{
+  m_track = {
+      {Point(0, 0), 100}, {Point(400, 0), 100}, {Point(400, 400), 100}, {Point(0, 400), 100}, {Point(0, 1000), 100}};
+  Build();
+  Start();
+  RunOnGui([&]
+  {
+    for (auto const & point : {m2::PointD(0, 0), m2::PointD(400, 0), m2::PointD(400, 400), m2::PointD(0, 400)})
+    {
+      Feed(point.x, point.y);
+      TEST(m_session->IsOnRoute(), (point));
+    }
+  });
+  Rebuild(0, 400);
+  RunOnGui([&]
+  {
+    for (double y = 402; y <= 700; y += 2)
+    {
+      Feed(0, y);
+      TEST(m_session->IsOnRoute(), (y));
+      TEST_ALMOST_EQUAL_ABS(mercator::DistanceOnEarth(m_session->GetRoute()->GetCurrentIter().m_pt, Point(0, y)), 0.0,
+                            1.0E-6, (y));
+    }
+  });
+  TEST(Notifications().empty(), ());
 }
 
 UNIT_CLASS_TEST(TrackVoiceTest, PreviewGpsCannotSkipTheCapturedEntry)
@@ -610,17 +700,30 @@ UNIT_CLASS_TEST(TrackVoiceTest, DepartureKeepsCompletionAndSuppressesStaleTurns)
   Build(0, 0, false);
   Start();
   double completion = 0.0;
+  FollowingInfo info;
   RunOnGui([&]
   {
     m_session->SetTurnNotificationsLocale("en");
     Feed(0, 0);
     Feed(190, 0);
+    m_session->GetRouteFollowingInfo(info);
+    TEST_EQUAL(info.m_pedestrianTurn, turns::PedestrianDirection::TurnLeft, ());
+    TEST(info.m_distToTurn.IsValid(), ());
     completion = m_session->GetCompletionPercent();
     for (double y = -40; y >= -400; y -= 40)
       Feed(190, y);
     TEST(!m_session->IsOnRoute(), ());
     TEST(m_session->IsNavigable(), ("Keep remaining metrics and navigation presentation available off track"));
-    TEST_ALMOST_EQUAL_ABS(m_session->GetCompletionPercent(), completion, 1.0E-6, ());
+    m_session->GetRouteFollowingInfo(info);
+    TEST(info.m_distToTarget.IsValid(), ());
+    TEST_GREATER(info.m_time, 0, ());
+    TEST_ALMOST_EQUAL_ABS(info.m_completionPercent, completion, 1.0E-6, ());
+    TEST_EQUAL(info.m_pedestrianTurn, turns::PedestrianDirection::None, ());
+    TEST_EQUAL(info.m_turn, turns::CarDirection::None, ());
+    TEST_EQUAL(info.m_nextTurn, turns::CarDirection::None, ());
+    TEST(!info.m_distToTurn.IsValid(), ());
+    TEST(info.m_currentStreetName.empty() && info.m_nextStreetName.empty(), ());
+    TEST(info.m_lanes.empty(), ());
   });
   Voice(true);
   auto const containsTurn = [](std::vector<std::string> const & notifications)
@@ -634,7 +737,10 @@ UNIT_CLASS_TEST(TrackVoiceTest, DepartureKeepsCompletionAndSuppressesStaleTurns)
   {
     Feed(190, 0);
     TEST(m_session->IsOnRoute(), ());
-    TEST_ALMOST_EQUAL_ABS(m_session->GetCompletionPercent(), completion, 1.0E-6, ());
+    m_session->GetRouteFollowingInfo(info);
+    TEST_ALMOST_EQUAL_ABS(info.m_completionPercent, completion, 1.0E-6, ());
+    TEST_EQUAL(info.m_pedestrianTurn, turns::PedestrianDirection::TurnLeft, ());
+    TEST(info.m_distToTurn.IsValid(), ());
   });
   bool resumedTurns = false;
   for (size_t i = 0; i < 3; ++i)
