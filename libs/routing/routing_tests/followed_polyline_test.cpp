@@ -227,6 +227,27 @@ UNIT_TEST(FollowedPolyline_TrackBacktrackingKeepsSpatialTolerance)
   }
 }
 
+UNIT_TEST(FollowedPolyline_TrackForwardChainStopsAtSourceRevisit)
+{
+  for (auto const & direction : {m2::PointD(1, 0), m2::PointD(-1, 0), m2::PointD(0, 1), m2::PointD(0, -1)})
+  {
+    auto const point = [&direction](double x) { return direction * mercator::MetersToMercator(x); };
+    std::vector<m2::PointD> points;
+    for (int x = 0; x <= 40; ++x)
+      points.push_back(point(x));
+    points.insert(points.end(), {point(38), point(40), point(100)});
+    FollowedPolyline poly(points.begin(), points.end());
+    TEST(poly.UpdateTrackMatchingProjection({.m_positionRect = TrackFixRect(42 * direction.x, 42 * direction.y),
+                                             .m_maxProgressM = 45.0,
+                                             .m_toleranceM = 5.0,
+                                             .m_forwardDirection = direction}),
+         (direction));
+    TEST_ALMOST_EQUAL_ABS(poly.GetDistanceFromStartMeters(), mercator::DistanceOnEarth(points.front(), point(40)),
+                          1.0E-6,
+                          ("A source revisit must end forward continuation even within GPS uncertainty", direction));
+  }
+}
+
 UNIT_TEST(FollowedPolyline_LastNonZeroSegmentCacheFollowsGeometry)
 {
   std::vector<m2::PointD> const points = {TrackPoint(0), TrackPoint(10), TrackPoint(20), TrackPoint(20)};
