@@ -76,8 +76,13 @@ public class MapButtonsController extends Fragment
 
   private final Observer<Integer> mPlacePageDistanceToTopObserver = translationY -> move(translationY, true);
   private final Observer<Integer> mRoutingBottomDistanceToTopObserver = translationY -> move(translationY, false);
-  private final Observer<Boolean> mBottomButtonHiddenObserver = this::setBottomButtonsHidden;
-  private final Observer<Integer> mSearchPageDistanceToTopObserver = this::moveForSearch;
+  private final Observer<Boolean> mBottomButtonHiddenObserver = hidden -> updateBottomButtonsVisibility();
+  private final Observer<Boolean> mSearchEnabledObserver = enabled -> updateBottomButtonsVisibility();
+  private final Observer<Integer> mSearchPageDistanceToTopObserver = translationY ->
+  {
+    moveForSearch(translationY);
+    updateBottomButtonsVisibility();
+  };
   private final Observer<Boolean> mButtonHiddenObserver = this::setButtonsHidden;
   private final Observer<Integer> mMyPositionModeObserver = this::updateNavMyPositionButton;
   private final Observer<SearchWheel.SearchOption> mSearchOptionObserver = this::onSearchOptionChange;
@@ -178,11 +183,18 @@ public class MapButtonsController extends Fragment
     showButton(false, MapButtons.trackRecordingStatus);
     return mFrame;
   }
-  // For disabling bottom buttons which are visible in tablets
-  private void setBottomButtonsHidden(boolean hide)
+  // On wide portrait screens the search sheet is centered and doesn't cover the start-aligned buttons.
+  // INVISIBLE keeps the frame measured for the bottom widgets offset.
+  private void updateBottomButtonsVisibility()
   {
-    if (mBottomButtonsFrame != null)
-      UiUtils.showIf(!hide, mBottomButtonsFrame);
+    if (mBottomButtonsFrame == null)
+      return;
+    final Integer searchPageTop = mSearchPageViewModel.getSearchPageDistanceToTop().getValue();
+    final boolean behindSearchPage = Boolean.TRUE.equals(mSearchPageViewModel.getSearchEnabled().getValue())
+                                  && searchPageTop != null && searchPageTop < mBottomButtonsFrame.getTop();
+    final boolean hidden =
+        Boolean.TRUE.equals(mMapButtonsViewModel.getBottomButtonsHidden().getValue()) || behindSearchPage;
+    mBottomButtonsFrame.setVisibility(hidden ? View.INVISIBLE : View.VISIBLE);
   }
 
   public void showButton(boolean show, MapButtonsController.MapButtons button)
@@ -472,6 +484,7 @@ public class MapButtonsController extends Fragment
     mMapButtonsViewModel.getBottomButtonsHidden().observe(viewLifecycleOwner, mBottomButtonHiddenObserver);
     mMapButtonsViewModel.getButtonsHidden().observe(viewLifecycleOwner, mButtonHiddenObserver);
     mSearchPageViewModel.getSearchPageDistanceToTop().observe(viewLifecycleOwner, mSearchPageDistanceToTopObserver);
+    mSearchPageViewModel.getSearchEnabled().observe(viewLifecycleOwner, mSearchEnabledObserver);
     mMapButtonsViewModel.getMyPositionMode().observe(viewLifecycleOwner, mMyPositionModeObserver);
     mMapButtonsViewModel.getSearchOption().observe(viewLifecycleOwner, mSearchOptionObserver);
     mMapButtonsViewModel.getTrackRecorderState().observe(viewLifecycleOwner, mTrackRecorderObserver);
@@ -551,6 +564,7 @@ public class MapButtonsController extends Fragment
       mContentHeight = bottom - top;
       mContentWidth = right - left;
       mMapButtonsViewModel.setBottomButtonsHeight(getBottomButtonsHeight());
+      updateBottomButtonsVisibility();
       mContentView.removeOnLayoutChangeListener(this);
     }
   }
