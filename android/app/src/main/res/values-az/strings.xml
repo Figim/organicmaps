@@ -8,72 +8,72 @@
     <string name="cancel">Ləğv et</string>
     <!-- Button which deletes downloaded country -->
     <string name="delete">Sil</string>
-    <string name="download_maps">Xəritəni yüklə</string>
+    <string name="download_maps">Xəritələri Yüklə</string>
     <!-- Settings/Downloader - info for country when download fails -->
     <string name="download_has_failed">Yükləmə uğursuz oldu. Yenidən cəhd etmək üçün toxunun.</string>
     <!-- Settings/Downloader - info for country which started downloading -->
-    <string name="downloading">Endirilir…</string>
+    <string name="downloading">Yüklənir…</string>
     <!-- Choose measurement on first launch alert - choose metric system button -->
     <string name="kilometres">Kilometr</string>
     <!-- Imperial measurement option: 1 mile = 1609.344 m; Swedish/Norwegian "mil" = 10 km -->
     <string name="miles">Mil</string>
     <!-- Update maps later button text -->
-    <string name="later">Daha sonra</string>
+    <string name="later">Sonra</string>
     <!-- View and button titles for accessibility. Also used in iPhone home screen quick actions. -->
     <string name="search">Axtar</string>
     <!-- Search box placeholder text; Used when searching on the map itself, not when searching for a map -->
-    <string name="search_map">Xəritədə axtar</string>
+    <string name="search_map">Xəritədə Axtar</string>
     <!-- Location services are disabled by user alert - message -->
-    <string name="location_is_disabled_long_text">Bütün Məkan Xidmətləri hazırda bu cihaz və ya tətbiq üçün deaktiv edilib. Zəhmət olmasa bunu parametrlərdən aktiv edin.</string>
+    <string name="location_is_disabled_long_text">Hazırda bu cihaz və ya tətbiq üçün bütün Məkan Xidmətləri qapalıdır. Zəhmət olmasa onları Tənzimləmələr bölməsində aktivləşdirin.</string>
     <!-- A dialog title, that warns a user that Precise Location is disabled and suggests to turn it on -->
-    <string name="limited_accuracy">Məhdud dəqiqlik</string>
+    <string name="limited_accuracy">Məhdud Dəqiqlik</string>
     <!-- A dialog text, that warns a user that Precise Location is disabled and suggests to turn it on -->
-    <string name="precise_location_is_disabled_long_text">Dəqiq naviqasiyanı təmin etmək üçün parametrlərdə dəqiq bir yer təmin edin.</string>
+    <string name="precise_location_is_disabled_long_text">Dəqiq naviqasiyanı təmin etmək üçün tənzimləmələrdə Dəqiq Məkanı aktivləşdirin.</string>
     <!-- View and button titles for accessibility -->
     <string name="zoom_to_country">Xəritədə göstər</string>
     <!-- Message to display at the center of the screen when the country download has failed -->
     <string name="country_status_download_failed">Yükləmə uğursuz oldu</string>
     <!-- Button text for the button under the country_status_download_failed message -->
-    <string name="try_again">Yenidən cəhd et</string>
+    <string name="try_again">Yenidən Cəhd Et</string>
     <string name="about_menu_title">Organic Maps Haqqında</string>
     <!-- Text in About screen -->
-    <string name="about_headline">Hər kəs üçün ödənişsiz və sevgi ilə hazırlanmış xəritə</string>
+    <string name="about_headline">Hər kəs üçün pulsuz, sevgi ilə yaradılıb</string>
     <!-- Text in About screen -->
-    <string name="about_proposition_1">• Reklam yoxdur, izləmə yoxdur, məlumatların toplanması yoxdur</string>
+    <string name="about_proposition_1">• Reklam yoxdur, izləmə yoxdur, məlumat toplamaq yoxdur</string>
     <!-- Text in About screen -->
-    <string name="about_proposition_2">• Batareyanın boşalması yoxdur, oflayn işləyir</string>
+    <string name="about_proposition_2">• Batareya sərf etmir, oflayn işləyir</string>
     <!-- Text in About screen -->
-    <string name="about_proposition_3">• Sürətli, minimalist, icma tərəfindən hazırlanmışdır</string>
+    <string name="about_proposition_3">• Sürətli, minimalist, icma tərəfindən idarə olunur</string>
     <!-- Text in About screen -->
-    <string name="about_developed_by_enthusiasts">Həvəskarlar və könüllülər tərəfindən yaradılan açıq mənbə proqramı.</string>
+    <string name="about_developed_by_enthusiasts">Həvəskarlar və könüllülər tərəfindən yaradılmış açıq mənbəli tətbiq.</string>
     <!-- The button that opens system location settings -->
-    <string name="location_settings">Məkan parametrləri</string>
-    <string name="close">Yaxın</string>
-    <string name="unsupported_phone">Tətbiq aparatla sürətləndirilmiş OpenGL tələb edir. Təəssüf ki, cihazınız dəstəklənmir.</string>
+    <string name="location_settings">Məkan Tənzimləmələri</string>
+    <string name="close">Bağla</string>
+    <string name="unsupported_phone">Tətbiq aparat təminatı ilə sürətləndirilmiş OpenGL tələb edir. Təəssüf ki, cihazınız dəstəklənmir.</string>
     <string name="download">Yüklə</string>
     <!-- Used in DownloadResources startup screen -->
-    <string name="disconnect_usb_cable">Organic Maps\'dan istifadə etmək üçün zəhmət olmasa USB kabeli ayırın və ya yaddaş kartı daxil edin</string>
+    <string name="disconnect_usb_cable">Organic Maps-dən istifadə etmək üçün zəhmət olmasa USB kabelini ayırın və ya yaddaş kartını daxil edin</string>
     <!-- Used in DownloadResources startup screen -->
-    <string name="not_enough_free_space_on_sdcard">Tətbiqdən istifadə etmək üçün SD kartda/USB yaddaş cihazında bir qədər yer boşaldın.</string>
-    <string name="download_resources">Başlamazdan əvvəl gəlin ümumi dünya xəritəsini cihazınıza endirək.\n%s yer tələb olunur.</string>
-    <string name="download_resources_continue">Xəritəyə keçin</string>
-    <string name="downloading_country_can_proceed">%s endirilir. İndi xəritəyə gedə bilərsiniz.</string>
-    <string name="download_country_ask">%s endirilir?</string>
+    <string name="not_enough_free_space_on_sdcard">Tətbiqdən istifadə etmək üçün əvvəlcə SD kartda/USB yaddaşda yer boşaldın</string>
+    <string name="download_resources">Tətbiqdən istifadə etməyə başlamazdan əvvəl, zəhmət olmasa dünya icmal xəritəsini cihazınıza yükləyin.\nO, yaddaşın %s qədərini istifadə edəcək.</string>
+    <string name="download_resources_continue">Xəritəyə Keç</string>
+    <string name="downloading_country_can_proceed">%s yüklənir. Artıq xəritəyə\nkeçə bilərsiniz.</string>
+    <string name="download_country_ask">%s yüklənsin?</string>
     <string name="update_country_ask">%s yenilənsin?</string>
     <!-- REMOVE THIS STRING AFTER REFACTORING -->
-    <string name="pause">Dayan</string>
+    <string name="pause">Pauza</string>
     <!-- REMOVE THIS STRING AFTER REFACTORING -->
     <string name="continue_button">Davam et</string>
     <!-- Show popup notification on top of the map when country download has failed. -->
-    <string name="download_country_failed">%s endirmə uğursuz oldu</string>
+    <string name="download_country_failed">%s yüklənməsi uğursuz oldu</string>
     <!-- "Add new bookmark list" dialog title -->
-    <string name="add_new_set">Yeni Siyahı əlavə edin</string>
+    <string name="add_new_set">Yeni Siyahı Əlavə Et</string>
     <!-- Add Bookmark list dialog - hint when the list name is empty -->
-    <string name="bookmark_set_name">Əlfəcin siyahı adı</string>
+    <string name="bookmark_set_name">Əlfəcin Siyahısının Adı</string>
     <!-- Should be used in the bookmarks-only context, see bookmarks_and_tracks if tracks are also implied. -->
     <string name="bookmarks">Əlfəcinlər</string>
     <!-- "Bookmarks and Tracks" dialog title. Also used in iPhone home screen quick actions. -->
-    <string name="bookmarks_and_tracks">Əlfəcinlər və Qeydlər</string>
+    <string name="bookmarks_and_tracks">Əlfəcinlər və Treklər</string>
     <!-- Add bookmark dialog - bookmark name -->
     <string name="name">Ad</string>
     <!-- Editor title above street and house number, duplicates [type.building.address] in types_strings.txt -->
@@ -81,41 +81,41 @@
     <!-- Add Bookmark dialog/Bookmark list; Bookmarks dialog/Bookmark list cell. -->
     <string name="list">Siyahı</string>
     <!-- Settings button in system menu -->
-    <string name="settings">Parametrlər</string>
+    <string name="settings">Tənzimləmələr</string>
     <!-- Header of settings activity where user defines storage path -->
-    <string name="maps_storage">Xəritələri yadda saxlayın</string>
+    <string name="maps_storage">Xəritələri harada saxlamaq</string>
     <!-- Detailed description of Maps Storage settings button -->
-    <string name="maps_storage_summary">Xəritələrin yüklənəcəyi qovluğu seçin</string>
+    <string name="maps_storage_summary">Xəritələrin yüklənəcəyi qovluğu seçin.</string>
     <!-- E.g. "Downloaded maps: 500Mb" in Maps Storage settings -->
-    <string name="maps_storage_downloaded">Xəritələr</string>
+    <string name="maps_storage_downloaded">Yüklənmiş xəritələr</string>
     <!-- Free space out of total storage size in Maps Storage settings, e.g. "300 MB free of 2 GB" -->
-    <string name="maps_storage_free_size">%2$s-nin %1$s-i boşdur</string>
+    <string name="maps_storage_free_size">%2$s-dən %1$s boşdur</string>
     <!-- Question dialog for transferring maps from one storage to another -->
     <string name="move_maps">Xəritələr köçürülsün?</string>
     <!-- Error moving map files from one storage to another -->
-    <string name="move_maps_error">Xəritə fayllarının köçürülmə xətası</string>
+    <string name="move_maps_error">Xəritə fayllarını köçürərkən xəta baş verdi</string>
     <!-- Ask user to wait several minutes (some long process in modal dialog). -->
-    <string name="wait_several_minutes">Bu proses bir neçə dəqiqə çəkə bilər. \nZəhmət olmasa gözləyin.</string>
+    <string name="wait_several_minutes">Bu, bir neçə dəqiqə çəkə bilər.\nZəhmət olmasa gözləyin…</string>
     <!-- Measurement units title in settings activity -->
     <string name="measurement_units">Ölçü vahidləri</string>
     <!-- Detailed description of Measurement Units settings button -->
-    <string name="measurement_units_summary">Mil və ya kilometr seçin</string>
+    <string name="measurement_units_summary">Mil və kilometr arasında seçin</string>
 
     <!-- SECTION: Search categories -->
     <!-- Search category for cafes, bars, restaurants; any changes should be duplicated in categories.txt @category_eat! -->
     <string name="category_eat">Harada yemək</string>
     <!-- Search category for grocery stores; any changes should be duplicated in categories.txt @category_food! -->
-    <string name="category_food">Ərzaq mağazası</string>
+    <string name="category_food">Ərzaq məhsulları</string>
     <!-- Search category for public transport; any changes should be duplicated in categories.txt @category_transport! -->
     <string name="category_transport">Nəqliyyat</string>
     <!-- Search category for fuel stations; any changes should be duplicated in categories.txt @category_fuel! -->
-    <string name="category_fuel">Yanacaq doldurma məntəqəsi</string>
+    <string name="category_fuel">Yanacaqdoldurma məntəqəsi</string>
     <!-- Search category for parking lots; any changes should be duplicated in categories.txt @category_parking! -->
-    <string name="category_parking">Avtomobil dayanacağı</string>
+    <string name="category_parking">Dayanacaq</string>
     <!-- Search category for malls/clothes/shoes/gifts/jewellery/sport shops; any changes should be duplicated in categories.txt @category_shopping! -->
     <string name="category_shopping">Alış-veriş</string>
     <!-- Search category for second_hand/charity/antique/auction shops; any changes should be duplicated in categories.txt @category_secondhand! -->
-    <string name="category_secondhand">İkinci əl</string>
+    <string name="category_secondhand">İkinci Əl</string>
     <!-- Search category for places to stay; any changes should be duplicated in categories.txt @category_hotel! -->
     <string name="category_hotel">Otel</string>
     <!-- Search category sight seeings and touristic attractions; any changes should be duplicated in categories.txt @category_tourism! -->
@@ -135,7 +135,7 @@
     <!-- Search category for hospitals; any changes should be duplicated in categories.txt @category_hospital! -->
     <string name="category_hospital">Xəstəxana</string>
     <!-- Search category for toilets; any changes should be duplicated in categories.txt @category_toilet! -->
-    <string name="category_toilet">Ayaqyolu</string>
+    <string name="category_toilet">Tualet</string>
     <!-- Search category for post offices; any changes should be duplicated in categories.txt @category_post! -->
     <string name="category_post">Poçt</string>
     <!-- Search category for police; any changes should be duplicated in categories.txt @category_police! -->
@@ -145,571 +145,571 @@
     <!-- Search category for water; any changes should be duplicated in categories.txt @category_water! Also a bookmarks list group header when sorting by type. -->
     <string name="category_water">Su</string>
     <!-- Search category for RV facilities; any changes should be duplicated in categories.txt @category_rv! -->
-    <string name="category_rv">Karvan qurğuları</string>
+    <string name="category_rv">Avtoqoşqu İmkanları</string>
 
     <!-- SECTION: Other translations -->
     <!-- Notes field in Bookmarks view -->
     <string name="description">Qeydlər</string>
     <!-- Email Subject when sharing bookmark list -->
     <string name="share_bookmarks_email_subject">Organic Maps əlfəcinləri sizinlə paylaşıldı</string>
-    <string name="share_bookmarks_email_body">Salam!\n\nOrganic Maps əlfəcinlərim əlavə olunub. Zəhmət olmasa Organic Maps-da onları açın. Əgər onu quraşdırmamısınızsa, bu linkə daxil olub cihazınıza yükləyə bilərsiniz: https://omaps.app/get?kmz\n\nOrganic Maps ilə səyahətdən həzz alın!</string>
+    <string name="share_bookmarks_email_body">Salam!\n\nƏlavə edilmiş faylda mənim əlfəcinlərim yerləşir; zəhmət olmasa onları Organic Maps-də açın. Əgər quraşdırmamısınızsa, buradan yükləyə bilərsiniz: https://omaps.app/get?kmz\n\nOrganic Maps ilə səyahət etməkdən həzz alın!</string>
     <!-- message title of loading file -->
-    <string name="load_kmz_title">Əlfəcinlər yüklənir</string>
+    <string name="load_kmz_title">Əlfəcinlər Yüklənir</string>
     <!-- Kmz file successful loading -->
-    <string name="load_kmz_successful">Əlfəcinlər uğurla yükləndi! Siz onları Xəritədə və ya Əlfəcin Menecer ekranında tapa bilərsiniz.</string>
+    <string name="load_kmz_successful">Əlfəcinlər uğurla yükləndi! Onları xəritədə və ya Əlfəcinlər Meneceri ekranında tapa bilərsiniz.</string>
     <!-- Kml file loading failed -->
-    <string name="load_kmz_failed">Əlfəcinlərin quraşdırılması uğursuz oldu. Fayl zədələnmiş və ya qüsurlu ola bilər.</string>
+    <string name="load_kmz_failed">Əlfəcinləri yükləmək mümkün olmadı. Fayl zədələnmiş və ya qüsurlu ola bilər.</string>
     <!-- Failed to recognize the format of a bookmarks or tracks file. -->
     <string name="unknown_file_type">Fayl növü tətbiq tərəfindən tanınmır:\n%1$s</string>
     <!-- Failed to open a bookmarks or tracks file in Organic Maps. -->
-    <string name="failed_to_open_file">Faylı açmaq alınmadı %1$s\n\n%2$s</string>
+    <string name="failed_to_open_file">%1$s faylını açmaq mümkün olmadı\n\n%2$s</string>
     <!-- resource for context menu -->
     <string name="edit">Redaktə et</string>
     <!-- Warning message when doing search around current position -->
-    <string name="unknown_current_position">Məkanınız hələ müəyyən edilməyib</string>
+    <string name="unknown_current_position">Cari yeriniz hələ müəyyən edilməyib</string>
     <!-- Alert message that we can't run Map Storage settings due to some reasons. -->
-    <string name="cant_change_this_setting">Üzr istəyirik, Xəritə Yaddaşı parametrləri hazırda deaktivdir.</string>
+    <string name="cant_change_this_setting">Üzr istəyirik, Xəritə Saxlama tənzimləmələri hazırda qapalıdır.</string>
     <!-- Alert message that downloading is in progress. -->
-    <string name="downloading_is_active">Xəritənin endirilməsi hazırda davam edir.</string>
+    <string name="downloading_is_active">Hazırda xəritə yüklənməsi davam edir.</string>
     <!-- Share button text which opens menu with more buttons, like Message, EMail, Facebook etc. -->
-    <string name="share">Paylaşın</string>
+    <string name="share">Paylaş</string>
     <!-- Email subject when sharing a place. %1$@ is the place name or address. -->
-    <string name="share_place_subject">%1$s Organic Maps-də</string>
+    <string name="share_place_subject">Organic Maps-də %1$s</string>
     <!-- Email subject when sharing a place that has no name or address. -->
-    <string name="share_place_subject_default">Organic Maps-də məkan</string>
+    <string name="share_place_subject_default">Organic Maps-də bir yer</string>
     <!-- Share by email button text, also used in editor and About. -->
     <string name="email">E-poçt</string>
     <!-- Text for message when used successfully copied something -->
-    <string name="copied_to_clipboard">Buferə kopyalandı: %s</string>
+    <string name="copied_to_clipboard">Mübadilə buferinə kopyalandı: %s</string>
     <!-- Used for bookmark editing -->
-    <string name="done">Bitdi</string>
+    <string name="done">Hazırdır</string>
     <!-- Data version in «About» screen, %@ is replaced by a local, human readable date. -->
-    <string name="data_version">OpenStreetMap datası: %s</string>
+    <string name="data_version">OpenStreetMap məlumatları: %s</string>
     <!-- Confirmation for OpenStreetMap log out. -->
-    <string name="osm_log_out_confirmation">OpenStreetMap hesabınızdan çıxmaq istədiyinizə əminsiniz?</string>
+    <string name="osm_log_out_confirmation">OpenStreetMap hesabınızdan çıxmaq istədiyinizə əminsinizmi?</string>
     <!-- Title for tracks category in bookmarks manager -->
-    <string name="tracks_title">Marşrutlari</string>
+    <string name="tracks_title">Treklər</string>
     <!-- Length of track in cell that describes route -->
     <string name="length">Uzunluq</string>
-    <string name="share_my_location">Məkanımı Paylaşın</string>
+    <string name="share_my_location">Məkanımı Paylaş</string>
     <!-- Settings general group in settings screen -->
-    <string name="prefs_group_general">Ümumi Parametrlər</string>
+    <string name="prefs_group_general">Ümumi tənzimləmələr</string>
     <!-- Settings information group in settings screen -->
     <string name="prefs_group_information">Məlumat</string>
     <string name="prefs_group_route">Naviqasiya</string>
     <!-- Setting name which enables or disables zoom buttons on the map screen. -->
-    <string name="pref_zoom_title">+ və - düymələri xəritədə</string>
+    <string name="pref_zoom_title">Xəritədə “+” və “-” düymələri</string>
     <string name="pref_zoom_summary">Xəritədə göstər</string>
     <string name="pref_auto_night_in_navigation_title">Qaranlıqda naviqasiya edərkən gecə üslubu</string>
     <!-- Settings «Map» category: «Night style» title -->
-    <string name="pref_map_style_title">Gecə rejimi</string>
+    <string name="pref_map_style_title">Gecə Rejimi</string>
     <!-- Generic «Off» string -->
-    <string name="off">Bağlı</string>
+    <string name="off">Qapat</string>
     <!-- Generic «On» string -->
     <string name="on">Açıq</string>
     <!-- Generic «Auto» string -->
     <string name="auto">Avtomatik</string>
     <!-- Settings «Map» category: «Perspective view» title -->
-    <string name="pref_map_3d_title">Perspektiv baxış</string>
+    <string name="pref_map_3d_title">Perspektiv görünüş</string>
     <!-- Settings «Map» category: «3D buildings» title -->
-    <string name="pref_map_3d_buildings_title">3D strukturları</string>
+    <string name="pref_map_3d_buildings_title">3D binalar</string>
     <!-- A message in Settings/Preferences explaining why is it not possible to enable 3D buildings when max power saving mode is enabled -->
-    <string name="pref_map_3d_buildings_disabled_summary">3D binalar enerjiyə qənaət rejimində söndürülür</string>
+    <string name="pref_map_3d_buildings_disabled_summary">Enerjiyə qənaət rejimində 3D binalar qapalıdır</string>
     <!-- Settings: title of the satellite imagery (custom raster tiles) screen -->
-    <string name="pref_bg_tiles_title">Peyk görüntüləri</string>
+    <string name="pref_bg_tiles_title">Peyk Təsvirləri</string>
     <!-- Settings «Satellite Imagery»: title of the tile server URL input field -->
     <string name="pref_bg_tiles_url_title">Server URL-i</string>
     <!-- Settings «Satellite Imagery»: shown under the Server URL field when its value is malformed (must start with http(s):// and contain the {z}/{x}/{y} placeholders) -->
     <string name="pref_bg_tiles_url_error">{z}/{x}/{y} ehtiva edən etibarlı URL daxil edin</string>
     <!-- Settings «Satellite Imagery»: title of the on-disk tile cache size limit (in megabytes) -->
-    <string name="pref_bg_tiles_size_title">Keş ölçüsü (MB)</string>
+    <string name="pref_bg_tiles_size_title">Kэş ölçüsü (MB)</string>
     <!-- Settings «Satellite Imagery»: opacity of vector area objects drawn over the imagery (0% hides them) -->
-    <string name="pref_bg_tiles_opacity_title">Sahə obyektlərinin qeyri-şəffaflığı</string>
+    <string name="pref_bg_tiles_opacity_title">Sahə obyektlərinin şəffaflığı</string>
     <!-- Settings «Satellite Imagery»: legal note that the user is responsible for the custom tile source they configure -->
-    <string name="pref_bg_tiles_disclaimer">Fərdi döşəmə mənbələrini siz təqdim edirsiniz. Yalnız daxil olmağa icazəniz olan xidmətlərdən istifadə edin. Mənbə göstərilməsi, lisenziya şərtləri, API açarları, kvotalar və istifadə limitlərinə görə siz məsuliyyət daşıyırsınız.</string>
+    <string name="pref_bg_tiles_disclaimer">Xüsusi plitə mənbələri sizin tərəfinizdən təmin edilir. Yalnız daxil olmağa icazə verilən xidmətlərdən istifadə edin. İstinad, lisenziya şərtləri, API açarları, kvotalar və istifadə limitlərinə görə məsuliyyət daşıyısınız.</string>
     <!-- Settings «Route» category: «Tts enabled» title -->
-    <string name="pref_tts_enable_title">Səsli təlimatlar</string>
+    <string name="pref_tts_enable_title">Səsli Təlimatlar</string>
     <!-- Settings «Route» category: «Tts announce street names» title -->
-    <string name="pref_tts_street_names_title">Küçə adlarını elan edin</string>
+    <string name="pref_tts_street_names_title">Küçə Adlarını Elan Et</string>
     <!-- Settings «Route» category: «Tts announce street names» description -->
-    <string name="pref_tts_street_names_description">Aktiv edildikdə, dönmək üçün küçənin və ya çıxışın adı ucadan səsləndiriləcək.</string>
+    <string name="pref_tts_street_names_description">Aktivləşdirildikdə, dövr ediləcək küçənin və ya çıxışın adı uca səslə deyiləcək.</string>
     <!-- Settings «Route» category: «Tts language» title -->
-    <string name="pref_tts_language_title">Audio Dil</string>
+    <string name="pref_tts_language_title">Səs Dili</string>
     <!-- Settings «Route» category: «Test Voice Directions» title -->
-    <string name="pref_tts_test_voice_title">Test səsli göstərişlər (TTS, Text-to-Speech)</string>
+    <string name="pref_tts_test_voice_title">Səsli İstiqamətləri Sına (TTS, Mətn-dən-Səsə)</string>
     <!-- Settings «Route» category: Pop-up message when clicking «Test Voice Directions» -->
-    <string name="pref_tts_playing_test_voice">İndi səs eşitmirsinizsə, səs səviyyəsini və ya sistemin mətndən nitqə çevirmə parametrlərini yoxlayın.</string>
+    <string name="pref_tts_playing_test_voice">Əgər səsi eşitmirsinizsə, səs səviyyəsini və ya sistemin Mətn-dən-Səsə tənzimləmələrini yoxlayın.</string>
     <!-- Settings «Route» category: «Tts unavailable» subtitle. Also used as a CarToast in Android Auto when the user taps the muted voice icon. -->
-    <string name="pref_tts_unavailable">Mövcud deyil</string>
-    <string name="pref_map_auto_zoom">Avtomatik böyütmə</string>
+    <string name="pref_tts_unavailable">Əlçatan Deyil</string>
+    <string name="pref_map_auto_zoom">Avtomatik miqyas</string>
     <string name="placepage_distance">Məsafə</string>
-    <string name="search_show_on_map">Xəritədə baxın</string>
+    <string name="search_show_on_map">Xəritədə bax</string>
     <!-- Menu button -->
     <string name="menu">Menyu</string>
     <!-- Text in menu -->
-    <string name="website">Veb sayt</string>
+    <string name="website">Veb-sayt</string>
     <!-- Text in About menu, opens Organic Maps news website -->
     <string name="news">Xəbərlər</string>
     <!-- Settings: Send feedback button and dialog title -->
-    <string name="feedback">Rəy</string>
+    <string name="feedback">Əks əlaqə</string>
     <!-- Text in menu -->
-    <string name="rate_the_app">Proqramı qiymətləndirin</string>
+    <string name="rate_the_app">Tətbiqi qiymətləndirin</string>
     <!-- Text in menu -->
-    <string name="help">Yardım</string>
+    <string name="help">Kömək</string>
     <!-- Button in the main Help dialog -->
-    <string name="faq">Tez-tez soruşulan suallar</string>
+    <string name="faq">Tez-tez Verilən Suallar</string>
     <!-- Button in the main menu -->
-    <string name="donate">Bağışlamaq</string>
-    <string name="already_donated">Artıq ianə edildi</string>
-    <string name="remind_me_later">Daha sonra xatırlat</string>
-    <string name="support_organic_maps">Organic Maps-i dəstəkləmək</string>
+    <string name="donate">İanə et</string>
+    <string name="already_donated">Artıq ianə etmişəm</string>
+    <string name="remind_me_later">Sonra xatırlat</string>
+    <string name="support_organic_maps">Organic Maps-i dəstəklə</string>
     <!-- Button in the main Help dialog -->
-    <string name="how_to_support_us">Bu layihəni dəstəkləyin</string>
+    <string name="how_to_support_us">Layihəni dəstəklə</string>
     <!-- Button in the main Help dialog -->
-    <string name="copyright">Müəllif hüququ</string>
+    <string name="copyright">Müəllif hüquqları</string>
     <!-- Text in menu + Button in the main Help dialog. Used in home screen quick actions. -->
-    <string name="report_a_bug">Problemi bildirin</string>
+    <string name="report_a_bug">Xəta bildirin</string>
     <!-- Toast text when compass calibration may improve the correctness of the current position arrow -->
-    <string name="compass_calibration_recommended">Kompası kalibrləmək və ox istiqamətini yaxşılaşdırmaq üçün telefonu səkkiz rəqəmi şəklinə çevirin.</string>
+    <string name="compass_calibration_recommended">Kompası kalibrləmək üçün telefonu səkkiz rəqəmi şəklində hərəkət etdirərək ox istiqamətini yaxşılaşdırın.</string>
     <!-- Toast text when compass calibration may improve the correctness of the current position arrow -->
-    <string name="compass_calibration_required">Kompası kalibrləmək və xəritədə oxun istiqamətini düzəltmək üçün telefonu səkkiz rəqəmlə hərəkət etdirin.</string>
+    <string name="compass_calibration_required">Kompası kalibrləmək və xəritədəki ox istiqamətini düzəltmək üçün telefonunuzu səkkiz rəqəmi şəklində hərəkət etdirin.</string>
     <!-- Toast text when user hides UI with a long tap anywhere on the map -->
-    <string name="long_tap_toast">İnterfeysi görmək üçün yenidən xəritəyə uzun müddət toxunun</string>
+    <string name="long_tap_toast">İnterfeysə baxmaq üçün xəritəyə yenidən uzun toxunun</string>
     <!-- Update all button text -->
-    <string name="downloader_update_all_button">Hamısını yeniləyin</string>
+    <string name="downloader_update_all_button">Hamısını Yenilə</string>
     <!-- Cancel all button text -->
-    <string name="downloader_cancel_all">Hamısını ləğv et</string>
+    <string name="downloader_cancel_all">Hamısını Ləğv Et</string>
     <!-- Downloaded maps list header -->
-    <string name="downloader_downloaded_subtitle">Yükləmələr</string>
+    <string name="downloader_downloaded_subtitle">Yüklənib</string>
     <!-- Country queued for download -->
-    <string name="downloader_queued">Növbədə</string>
-    <string name="downloader_near_me_subtitle">Mənə yaxın</string>
+    <string name="downloader_queued">Növbədədir</string>
+    <string name="downloader_near_me_subtitle">Yaxınlığımda</string>
     <!-- In maps downloader and country place page shows how many maps are downloaded / to download, e.g. "Maps: 3 of 10" -->
     <string name="downloader_status_maps">Xəritələr</string>
-    <string name="downloader_download_all_button">Hamısını Yükləyin</string>
-    <string name="downloader_downloading">Endirilir:</string>
+    <string name="downloader_download_all_button">Hamısını Yüklə</string>
+    <string name="downloader_downloading">Yüklənir:</string>
     <!-- Displayed in a dialog that appears when a user tries to delete a map while the app is in the follow route mode -->
-    <string name="downloader_delete_map_while_routing_dialog">Xəritəni təmizləmək üçün naviqasiyanı dayandırın.</string>
+    <string name="downloader_delete_map_while_routing_dialog">Xəritəni silmək üçün zəhmət olmasa naviqasiyanı dayandırın.</string>
     <!-- Context menu item for downloader. -->
-    <string name="downloader_download_map">Xəritəni yükləyin</string>
+    <string name="downloader_download_map">Xəritəni yüklə</string>
     <!-- Item status in downloader. -->
     <string name="downloader_retry">Yenidən cəhd et</string>
     <!-- Item in context menu. -->
-    <string name="downloader_delete_map">Xəritəni silin</string>
+    <string name="downloader_delete_map">Xəritəni Sil</string>
     <!-- Item in context menu. -->
-    <string name="downloader_update_map">Xəritəni yeniləyin</string>
+    <string name="downloader_update_map">Xəritəni Yenilə</string>
     <!-- Preference title -->
     <string name="google_play_services">Google Play Məkan Xidmətləri</string>
     <!-- Preference text -->
-    <string name="pref_use_google_play">Bluetooth, WiFi və ya mobil şəbəkə vasitəsilə təxmini yerinizi tez müəyyənləşdirin</string>
+    <string name="pref_use_google_play">Bluetooth, Wi-Fi və ya mobil şəbəkədən istifadə edərək təxmini məkanınızı tez müəyyənləşdirin</string>
     <!-- Text for routing error dialog -->
-    <string name="routing_not_enough_space">Kifayət qədər yer yoxdur</string>
+    <string name="routing_not_enough_space">Kifayət qədər yoxdur</string>
     <!-- location service disabled -->
-    <string name="enable_location_services">Zəhmət olmasa məkan xidmətlərini aktivləşdirin</string>
-    <string name="save">Yadda saxla</string>
-    <string name="create">yaratmaq</string>
+    <string name="enable_location_services">Zəhmət olmasa Məkan Xidmətlərini aktivləşdirin</string>
+    <string name="save">Saxla</string>
+    <string name="create">yarat</string>
     <!-- Settings «Map» category: «Appearance» title -->
-    <string name="pref_appearance_title">Görünüş</string>
+    <string name="pref_appearance_title">Gۆرünüş</string>
     <!-- Settings "Appearance" category: "Light" title, should be consistent with the pref_appearance_title translation. -->
-    <string name="pref_appearance_light">Parlaq</string>
+    <string name="pref_appearance_light">Açıq</string>
     <!-- Settings "Appearance" category: "Dark" title, should be consistent with the pref_appearance_title translation. -->
     <string name="pref_appearance_dark">Tünd</string>
     <!-- Settings "Appearance" category: "Scheduled" title, should be consistent with the pref_appearance_title translation. -->
-    <string name="pref_appearance_scheduled">Şəfəqdən gün batana qədər açıq</string>
+    <string name="pref_appearance_scheduled">Sübhden axşamadək açıq rəng</string>
     <!-- Tex label above the Donate button -->
-    <string name="donate_description">Milyonlarla istifadəçiyə reklamsız, pulsuz xəritələr hədiyyə edin!</string>
+    <string name="donate_description">Milyonlarla istifadəçiyə reklamsız pulsuz xəritələr hədiyyə edin!</string>
 
     <!-- SECTION: Routing dialogs strings -->
-    <string name="dialog_routing_disclaimer_title">Marşrutunuzu izləyərkən aşağıdakıları yadda saxlayın:</string>
-    <string name="dialog_routing_disclaimer_priority">— Yol şəraiti, yol hərəkəti qaydaları və yol nişanları həmişə naviqasiya məsləhətindən üstündür;</string>
-    <string name="dialog_routing_disclaimer_precision">— Xəritə dəqiq olmaya bilər və tövsiyə olunan marşrut təyinat yerinə çatmağın ən yaxşı yolu olmaya bilər;</string>
-    <string name="dialog_routing_disclaimer_recommendations">— Təklif olunan marşrutlar yalnız tövsiyə kimi hesab edilməlidir;</string>
-    <string name="dialog_routing_disclaimer_borders">— Sərhəd bölgələrində marşrutlarla diqqətli olun: tətbiqimiz yaradılan marşrutlar bəzən icazə verilməyən yerlərdə ölkə sərhədlərini keçə bilər.</string>
-    <string name="dialog_routing_disclaimer_beware">Xahiş edirəm, yolda diqqətli və təhlükəsiz olun!</string>
-    <string name="dialog_routing_location_turn_wifi">Zəhmət olmasa GPS siqnalınızı yoxlayın. Wi-Fi-ı aktivləşdirmək məkan dəqiqliyini artırır.</string>
+    <string name="dialog_routing_disclaimer_title">Marşrutu izləyərkən zəhmət olmasa yadda saxlayın:</string>
+    <string name="dialog_routing_disclaimer_priority">— Yol şəraiti, yol hərəkəti qaydaları və yol nişanları həmişə naviqasiya tövsiyələrindən üstündür;</string>
+    <string name="dialog_routing_disclaimer_precision">— Xəritə qeyri-dəqiq ola bilər və təklif olunan marşrut təyinat yerinə çatmaq üçün həmişə ən optimal yol olmaya bilər;</string>
+    <string name="dialog_routing_disclaimer_recommendations">— Təklif olunan marşrutlar yalnız tövsiyə kimi başa düşülməlidir;</string>
+    <string name="dialog_routing_disclaimer_borders">— Sərhəd zonalarındakı marşrutlarla ehtiyatlı olun: tətbiqimiz tərəfindən yaradılan marşrutlar bəzən icazəsiz yerlərdən ölkə sərhədlərini keçə bilər.</string>
+    <string name="dialog_routing_disclaimer_beware">Zəhmət olmasa yollarda diqqətli və təhlükəsiz olun!</string>
+    <string name="dialog_routing_location_turn_wifi">Zəhmət olmasa GPS siqnalınızı yoxlayın. Wi-Fi-ın aktivləşdirilməsi məkanınızın dəqiqliyini yaxşılaşdıracaq.</string>
     <string name="dialog_routing_system_error">Sistem xətası</string>
-    <string name="not_now">İndi yox</string>
+    <string name="not_now">İndi Deyil</string>
 
     <!-- SECTION: Strings for downloading map from search -->
-    <string name="search_without_internet_advertisement">Axtarmaq və marşrut yaratmağa başlamaq üçün xəritəni endirin. Yüklədikdən sonra artıq internet bağlantısına ehtiyacınız olmayacaq.</string>
-    <string name="search_select_map">Xəritə seçin</string>
+    <string name="search_without_internet_advertisement">Axtarışa və marşrutlar yaratmağa başlamaq üçün zəhmət olmasa xəritəni yükləyin. Bundan sonra artıq internet bağlantısına ehtiyacınız olmayacaq.</string>
+    <string name="search_select_map">Xəritə Seçin</string>
     <!-- «Show» context menu -->
     <string name="show">Göstər</string>
     <!-- «Hide» context menu -->
     <string name="hide">Gizlət</string>
     <string name="categories">Kateqoriyalar</string>
-    <string name="history">Keçmiş</string>
-    <string name="search_not_found">Üzr istəyirik, heç bir nəticə tapılmadı.</string>
+    <string name="history">Tarixçə</string>
+    <string name="search_not_found">Axtarış nəticəsi tapılmadı.</string>
     <!-- The message when user did not find anything in the search. -->
-    <string name="search_not_found_query">Axtardığınız bölgəni endirin və ya yaxınlıqdakı şəhər/kənd adını əlavə etməyə cəhd edin.</string>
-    <string name="search_history_title">Axtarış tarixçəsi</string>
+    <string name="search_not_found_query">Axtardığınız bölgəni yükləyin və ya yaxınlıqdakı qəsəbə/kənd adını əlavə etməyə cəhd edin.</string>
+    <string name="search_history_title">Axtarış Tarixçəsi</string>
     <!-- Tracks are recorded or imported GPS paths. -->
-    <string name="bookmarks_backup_title">Əlfəcinlərin və treklərin ehtiyat nüsxəsi</string>
+    <string name="bookmarks_backup_title">Əlfəcinlər və treklərin ehtiyat nüsxəsi</string>
     <!-- Tracks are recorded or imported GPS paths. -->
-    <string name="bookmarks_backup_description">Bu cihazda ehtiyat nüsxə aktivdirsə və əlfəcinlərlə treklər onun ölçü limitini aşmırsa, onlar Android sistem ehtiyat nüsxələrinə daxil edilə bilər.</string>
-    <string name="search_history_text">Son axtarışlara baxın.</string>
-    <string name="clear_search">Axtarış Tarixçəsini silin</string>
+    <string name="bookmarks_backup_description">Bu cihazda ehtiyat nüsxə aktivdirsə və ölçü limitinə uyğundursa, əlfəcinlər və treklər Android sistem ehtiyat nüsxələrinə daxil edilə bilər.</string>
+    <string name="search_history_text">Son axtarışlarınıza baxın.</string>
+    <string name="clear_search">Axtarış Tarixçəsini Təmizlə</string>
     <!-- Place Page link to Wikipedia article (if map object has it). -->
     <string name="read_in_wikipedia">Vikipediya</string>
     <!-- Source attribution for Wikipedia articles displayed in the place description screen. -->
     <string name="article_from_wikipedia">wikipedia.org saytından məqalə</string>
     <!-- Place Page link to Wikimedia Commons. -->
-    <string name="wikimedia_commons">Wikimedia Commons</string>
-    <string name="p2p_your_location">Məkanınız</string>
-    <string name="p2p_start">Başla</string>
-    <string name="p2p_from_here">Başlanğıc</string>
-    <string name="p2p_to_here">Son dayanacaq</string>
-    <string name="p2p_only_from_current">Naviqasiya yalnız cari yerinizdən mümkündür.</string>
-    <string name="p2p_reroute_from_current">Hazırkı yerinizdən marşrut planlaşdırmağımızı istərdinizmi?</string>
+    <string name="wikimedia_commons">Vikimedia Commons</string>
+    <string name="p2p_your_location">Sizin Məkanınız</string>
+    <string name="p2p_start">Başlanğıc</string>
+    <string name="p2p_from_here">Buradan marşrut</string>
+    <string name="p2p_to_here">Bura marşrut</string>
+    <string name="p2p_only_from_current">Naviqasiya yalnız cari məkanınızdan əlçatandır.</string>
+    <string name="p2p_reroute_from_current">Cari məkanınızdan marşrut planlaşdırmaq istəyirsinizmi?</string>
     <!-- Edit open hours/set time and minutes dialog -->
-    <string name="next_button">Sonrakı</string>
+    <string name="next_button">Növbəti</string>
     <!-- Tab title in the Edit Opening Hours time picker -->
-    <string name="editor_time_from">Açılır</string>
+    <string name="editor_time_from">Haradan</string>
     <!-- Tab title in the Edit Opening Hours time picker -->
-    <string name="editor_time_to">Bağlanır</string>
-    <string name="editor_time_add">Plan əlavə edin</string>
-    <string name="editor_time_delete">Cədvəli silin</string>
+    <string name="editor_time_to">Kimi</string>
+    <string name="editor_time_add">Cədvəl Əlavə Et</string>
+    <string name="editor_time_delete">Cədvəli Sil</string>
     <!-- Text for allday switch. -->
-    <string name="editor_time_allday">Bütün gün (24 saat)</string>
-    <string name="editor_time_open">Açıq</string>
-    <string name="editor_time_close">Bağlı</string>
-    <string name="editor_time_add_closed">Qeyri-iş saatları əlavə edin</string>
-    <string name="editor_time_title">İş saatları</string>
-    <string name="editor_time_advanced">Qabaqcıl rejim</string>
-    <string name="editor_time_simple">Sadə rejim</string>
-    <string name="editor_hours_closed">Qeyri-iş saatları</string>
-    <string name="editor_example_values">Nümunə Dəyərləri</string>
-    <string name="editor_correct_mistake">Səhvi düzəldin</string>
-    <string name="editor_add_select_location">Yer seçin</string>
+    <string name="editor_time_allday">Bütün Gün (24 saat)</string>
+    <string name="editor_time_open">Açıqdır</string>
+    <string name="editor_time_close">Bağlıdır</string>
+    <string name="editor_time_add_closed">Qeyri-iş Saatları Əlavə Et</string>
+    <string name="editor_time_title">İş Saatları</string>
+    <string name="editor_time_advanced">Qabaqcıl Rejim</string>
+    <string name="editor_time_simple">Sadə Rejim</string>
+    <string name="editor_hours_closed">Qeyri-iş Saatları</string>
+    <string name="editor_example_values">Nümunə Dəyərlər</string>
+    <string name="editor_correct_mistake">Səhvi düzəlt</string>
+    <string name="editor_add_select_location">Məkan Seçin</string>
     <string name="editor_report_problem_send_button">Göndər</string>
-    <string name="autodownload">Avtomatik yükləmə</string>
+    <string name="autodownload">Xəritələri avtomatik yüklə</string>
     <!-- Place Page opening hours text -->
     <string name="daily">Hər gün</string>
-    <string name="twentyfour_seven">7/24</string>
+    <string name="twentyfour_seven">24/7</string>
     <string name="day_off_today">Bu gün bağlıdır</string>
-    <string name="day_off">Bağlı</string>
-    <string name="midnight">Gecəyarı</string>
+    <string name="day_off">Bağlıdır</string>
+    <string name="midnight">Gecə yarısı</string>
     <string name="noon">Günorta</string>
-    <string name="opens_in">%s sonra açılır</string>
-    <string name="closes_in">%s sonra bağlanır</string>
-    <string name="closed">Bağlı</string>
-    <string name="edit_opening_hours">İş saatlarını redaktə edin</string>
+    <string name="opens_in">%s ərzində açılır</string>
+    <string name="closes_in">%s ərzində bağlanır</string>
+    <string name="closed">Bağlıdır</string>
+    <string name="edit_opening_hours">İş saatlarını redaktə et</string>
     <string name="no_osm_account">OpenStreetMap hesabınız yoxdur?</string>
-    <string name="register_at_openstreetmap">OpenStreetMap üçün qeydiyyatdan keçin</string>
+    <string name="register_at_openstreetmap">OpenStreetMap-də Qeydiyyatdan Keçin</string>
     <string name="login">Daxil ol</string>
     <!-- Status message indicating that user did not login to OSM profile yet. -->
-    <string name="not_signed_in">Giriş edilməyib</string>
-    <string name="login_osm">OpenStreetMap-a daxil olun</string>
-    <string name="password">Parol</string>
-    <string name="forgot_password">Parolu unutmusunuz?</string>
+    <string name="not_signed_in">Daxil olunmayıb</string>
+    <string name="login_osm">OpenStreetMap-ə Daxil Ol</string>
+    <string name="password">Şifrə</string>
+    <string name="forgot_password">Şifrənizi unutmusunuz?</string>
     <string name="logout">Çıxış</string>
-    <string name="edit_place">Məkanı Redaktə edin</string>
-    <string name="add_language">Dil əlavə edin</string>
+    <string name="edit_place">Yeri Redaktə Et</string>
+    <string name="add_language">Dil əlavə et</string>
     <string name="street">Küçə</string>
     <!-- Editable House Number text field (in address block). -->
     <string name="house_number">Bina nömrəsi</string>
     <string name="details">Təfərrüatlar</string>
     <string name="social_media">Sosial Media</string>
-    <string name="building">bina</string>
+    <string name="building">Bina</string>
     <!-- Text field to enter non-existing street name, below list of known streets around -->
-    <string name="add_street">Küçə əlavə edin</string>
+    <string name="add_street">Küçə əlavə et</string>
     <!-- Error to display when a new street name is not entered in the New street dialog -->
-    <string name="empty_street_name_error">Küçə adını daxil edin</string>
+    <string name="empty_street_name_error">Zəhmət olmasa küçə adı daxil edin</string>
     <string name="choose_language">Dil seçin</string>
     <string name="choose_street">Küçə seçin</string>
     <string name="cuisine">Mətbəx</string>
     <string name="select_cuisine">Mətbəx seçin</string>
     <!-- login text field -->
     <string name="email_or_username">E-poçt və ya istifadəçi adı</string>
-    <string name="editor_add_phone">Telefon əlavə edin</string>
+    <string name="editor_add_phone">Telefon Əlavə Et</string>
     <string name="level">Mərtəbə</string>
     <!-- Building level -->
-    <string name="level_value_generic">Səviyyə: %s</string>
-    <string name="downloader_delete_map_dialog">Bütün xəritə dəyişiklikləri xəritə ilə birlikdə silinəcək.</string>
-    <string name="downloader_update_maps">Xəritələri yeniləyin</string>
-    <string name="downloader_search_field_hint">Xəritəni tapın</string>
+    <string name="level_value_generic">Mərtəbə: %s</string>
+    <string name="downloader_delete_map_dialog">Xəritə ilə birlikdə bütün xəritə düzəlişləriniz də silinəcək.</string>
+    <string name="downloader_update_maps">Xəritələri Yenilə</string>
+    <string name="downloader_search_field_hint">Xəritə tap</string>
     <string name="common_check_internet_connection_dialog">Zəhmət olmasa cihazınızın internetə qoşulduğundan əmin olun.</string>
     <string name="downloader_no_space_title">Kifayət qədər yer yoxdur</string>
     <!-- Message shown when there is not enough space to download maps -->
     <string name="downloader_no_space_message">Zəhmət olmasa lazımsız məlumatları silin</string>
     <string name="editor_profile_changes">Təsdiqlənmiş Dəyişikliklər</string>
-    <string name="editor_focus_map_on_location">Xaç işarəsini yer və ya biznesin yerinə qoymaq üçün xəritəni dartın.</string>
-    <string name="editor_edit_place_title">Redaktə</string>
-    <string name="editor_add_place_title">Əlavə</string>
+    <string name="editor_focus_map_on_location">Çarpaz işarəni yerin və ya obyektin yerləşdiyi yerə qoymaq üçün xəritəni sürükləyin.</string>
+    <string name="editor_edit_place_title">Redaktə edilir</string>
+    <string name="editor_add_place_title">Əlavə olunur</string>
     <string name="editor_edit_place_name_hint">Yerin adı</string>
     <!-- The second part of the editor_edit_place_name_hint to explain that name should be entered in a local language, see https://wiki.openstreetmap.org/wiki/Key:name -->
     <string name="editor_default_language_hint">Yerli dildə yazıldığı kimi</string>
     <string name="editor_edit_place_category_title">Kateqoriya</string>
-    <string name="placepage_add_business_button">Təşkilat əlavə edin</string>
-    <string name="message_invalid_feature_position">Burada obyekti yerləşdirmək mümkün deyil</string>
+    <string name="placepage_add_business_button">Biznes əlavə et</string>
+    <string name="message_invalid_feature_position">Burada heç bir obyekt yerləşə bilməz</string>
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
-    <string name="osm_presentation">%s tarixinə icma tərəfindən yaradılmış OpenStreetMap datası. OpenStreetMap.org saytında xəritəni necə redaktə etmək və yeniləmək haqqında ətraflı məlumat əldə edin</string>
+    <string name="osm_presentation">İcma tərəfindən yaradılmış OpenStreetMap məlumatları %s tarixinə olan vəziyyətə əsasən. Xəritəni necə redaktə etmək və yeniləmək barədə OpenStreetMap.org saytından ətraflı öyrənin</string>
     <!-- OSM explanation on Android login screen -->
-    <string name="login_osm_presentation">OpenStreetMap.org (OSM) pulsuz və açıq xəritə yaratmaq üçün icma layihəsidir. Bu, Organic Maps xəritə məlumatlarının əsas mənbəyidir və Vikipediya kimi fəaliyyət göstərir. Siz yerlər əlavə edib və ya redaktə edə bilərsiniz və onlar bütün dünyada milyonlarla istifadəçi üçün əlçatan olur. İcmaya qoşulun və hər kəs üçün daha yaxşı xəritə yaratmağa kömək edin!</string>
-    <string name="login_to_make_edits_visible">OpenStreetMap hesabı yaradın və ya xəritə redaktələrinizi dünyada dərc etmək üçün daxil olun.</string>
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) pulsuz və açıq xəritə yaratmaq üçün icma layihəsidir. O, Organic Maps-də əsas xəritə məlumat mənbəyidir və Vikipediyaya bənzər şəkildə işləyir. Siz yerlər əlavə edə və ya redaktə edə bilərsiniz və onlar bütün dünyada milyonlarla istifadəçi üçün əlçatan olur.\nİcmaya qoşulun və hər kəs üçün daha yaxşı xəritə yaratmağa kömək edin!</string>
+    <string name="login_to_make_edits_visible">Xəritə redaktələrinizi dünyaya görünən etmək üçün OpenStreetMap hesabı yaradın və ya daxil olun.</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
-    <string name="downloader_of">%1$d/%2$d</string>
-    <string name="download_over_mobile_header">Mobil şəbəkə vasitəsilə endirilsin?</string>
-    <string name="download_over_mobile_message">Bəzi planlarda və ya rouminqlə bu olduqca bahalı hesab oluna bilərr.</string>
-    <string name="error_enter_correct_house_number">Etibarlı bina nömrəsini daxil edin</string>
-    <string name="editor_storey_number">Mərtəbə sayı (maks. %d)</string>
+    <string name="downloader_of">%2$d-dən %1$d</string>
+    <string name="download_over_mobile_header">Mobil şəbəkə bağlantısı üzərindən yüklənsin?</string>
+    <string name="download_over_mobile_message">Bəzi tariflərdə və ya rouminqdə bu, olduqca baha başa gələ bilər.</string>
+    <string name="error_enter_correct_house_number">Etibarlı bina nömrəsi daxil edin</string>
+    <string name="editor_storey_number">Mərtəbələrin sayı (maksimum %d)</string>
     <!-- Error message in Editor when a user tries to set the number of floors for a building higher than %d floors -->
     <string name="error_enter_correct_storey_number">Mərtəbələrin sayı %d-dən çox olmamalıdır</string>
-    <string name="editor_zip_code">Poçt kodu</string>
-    <string name="error_enter_correct_zip_code">Etibarlı poçt kodu daxil edin</string>
+    <string name="editor_zip_code">Poçt İndeksi</string>
+    <string name="error_enter_correct_zip_code">Etibarlı poçt indeksi daxil edin</string>
     <!-- Title for OSM note section in the editor -->
-    <string name="editor_other_info">OpenStreetMap könüllüləri üçün qeyd (isteğe bağlı)</string>
+    <string name="editor_other_info">OpenStreetMap könüllülərinə qeyd (istəyə görə)</string>
     <!-- Hint of the input field in the OSM note section of the editor -->
-    <string name="editor_note_hint">Xəritədəki səhvləri və ya redaktə edilə bilməyən elementləri təsvir edinOrganic Maps</string>
+    <string name="editor_note_hint">Xəritədəki səhvləri və ya Organic Maps ilə redaktə oluna bilməyən şeyləri təsvir edin</string>
     <!-- Information about OSM at the top of the editing page -->
-    <string name="editor_about_osm">Redaktələriniz ictimai <a href="https://wiki.openstreetmap.org/wiki/Tr:About">OpenStreetMap</a> verilənlər bazasına yüklənir. Zəhmət olmasa şəxsi və ya müəllif hüquqları ilə qorunan məlumatları əlavə etməyin.</string>
-    <string name="editor_more_about_osm">OpenStreetMap haqqında əlavə məlumat</string>
+    <string name="editor_about_osm">Dəyişiklikləriniz ictimai <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">OpenStreetMap</a> verilənlər bazasına yüklənir. Zəhmət olmasa şəxsi və ya müəllif hüququ ilə qorunan məlumatları əlavə etməyin.</string>
+    <string name="editor_more_about_osm">OpenStreetMap haqqında ətraflı</string>
     <string name="editor_osm_history">Redaktə tarixçəniz</string>
-    <string name="editor_osm_notes">Xəritə məlumatı qeydləriniz</string>
+    <string name="editor_osm_notes">Xəritə məlumat qeydləriniz</string>
     <string name="editor_operator">Operator</string>
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations… -->
     <string name="operator">Operator: %s</string>
     <string name="editor_category_unsuitable_title">Uyğun kateqoriya tapa bilmirsiniz?</string>
-    <string name="editor_category_unsuitable_text">Organic Maps yalnız sadə nöqtə kateqoriyaları əlavə etməyə imkan verir, yəni şəhərlər, yollar, göllər, binaların konturları və s. daxil deyil. Zəhmət olmasa belə kateqoriyaları birbaşa <a href="https://www.openstreetmap.org">OpenStreetMap.org</a> saytına əlavə edin. Ətraflı addım-addım təlimat üçün <a href="https://organicmaps.app/faq/editing/advanced-map-editing">bələdç</a>imizə baxın.</string>
-    <string name="downloader_no_downloaded_maps_title">Siz heç bir xəritə endirməmisiniz</string>
-    <string name="downloader_no_downloaded_maps_message">Ünvanları tapmaq və oflayn naviqasiya etmək üçün xəritələri endirin.</string>
-    <string name="current_location_unknown_error_title">Cari yer məlum deyil.</string>
+    <string name="editor_category_unsuitable_text">Organic Maps yalnız sadə nöqtə kateqoriyaları əlavə etməyə imkan verir, yəni şəhərlər, yollar, göllər, bina konturları və s. yoxdur. Zəhmət olmasa belə kateqoriyaları birbaşa <a href="https://www.openstreetmap.org">OpenStreetMap.org</a> saytına əlavə edin. Addım-addım ətraflı təlimatlar üçün <a href="https://organicmaps.app/faq/editing/advanced-map-editing">bələdçimizi</a> yoxlayın.</string>
+    <string name="downloader_no_downloaded_maps_title">Heç bir xəritə yükləməmisiniz</string>
+    <string name="downloader_no_downloaded_maps_message">Oflayn rejimdə axtarış etmək və naviqasiya üçün xəritələri yükləyin.</string>
+    <string name="current_location_unknown_error_title">Cari məkan naməlumdur.</string>
     <!-- abbreviation for kilometers per hour -->
     <string name="kilometers_per_hour">km/saat</string>
     <!-- Short label for miles per hour (1 mile = 1609.344 m), placed after a number; e.g. mph or mi/h -->
     <string name="miles_per_hour">mil/saat</string>
     <!-- Short label for hours (time unit), placed after a number -->
-    <string name="hour">saat</string>
+    <string name="hour">s</string>
     <!-- Short label for minutes (time unit), placed after a number -->
     <string name="minute">dəq</string>
     <!-- Short label for days (time unit), placed after a number -->
     <string name="day">gün</string>
     <!-- Short label for seconds (time unit), placed after a number -->
     <string name="second">san</string>
-    <string name="placepage_more_button">Digər</string>
+    <string name="placepage_more_button">Daha çox</string>
     <!-- Toolbar title of the Edit Bookmark screen. -->
-    <string name="placepage_edit_bookmark_button">Əlfəcini redaktə edin</string>
+    <string name="placepage_edit_bookmark_button">Əlfəcini Redaktə Et</string>
     <string name="placepage_personal_notes_hint">Şəxsi qeydlər (mətn və ya html)</string>
     <string name="editor_comment_hint">Şərh…</string>
     <string name="editor_reset_edits_message">Bütün yerli dəyişikliklər ləğv edilsin?</string>
-    <string name="editor_reset_edits_button">İmtina</string>
-    <string name="editor_remove_place_message">Əlavə edilmiş məkan silinsin?</string>
+    <string name="editor_reset_edits_button">Ləğv et</string>
+    <string name="editor_remove_place_message">Əlavə edilmiş yer silinsin?</string>
     <string name="editor_remove_place_button">Sil</string>
-    <string name="editor_place_doesnt_exist">Bu yer mövcud deyil</string>
+    <string name="editor_place_doesnt_exist">Yer mövcud deyil</string>
     <!-- Error message for "Place doesn't exist" dialog when comment is empty -->
-    <string name="delete_place_empty_comment_error">Zəhmət olmasa bu məkanı silməyin səbəbini göstərin</string>
+    <string name="delete_place_empty_comment_error">Zəhmət olmasa yerin silinmə səbəbini qeyd edin</string>
     <!-- Phone number error message -->
     <string name="error_enter_correct_phone">Etibarlı telefon nömrəsi daxil edin</string>
-    <string name="error_enter_correct_web">Etibarlı veb ünvanı daxil edin</string>
-    <string name="error_enter_correct_email">Etibarlı e-poçt ünvanını daxil edin</string>
-    <string name="error_enter_correct_facebook_page">Etibarlı Facebook veb-ünvanı, hesabı və ya səhifə adını daxil edin</string>
-    <string name="error_enter_correct_instagram_page">Etibarlı Instagram veb ünvanı və ya hesab adını daxil edin</string>
-    <string name="error_enter_correct_twitter_page">Etibarlı Twitter veb-ünvanı və ya istifadəçi adı daxil edin</string>
-    <string name="error_enter_correct_vk_page">Etibarlı VK veb-ünvanı və ya hesab adını daxil edin</string>
-    <string name="error_enter_correct_line_page">Etibarlı LINE veb-ünvanı və ya LINE ID daxil edin</string>
-    <string name="placepage_add_place_button">OpenStreetMap-a Yer əlavə edin</string>
-    <string name="osm_note_hint">Yoxsa alternativ olaraq, OpenStreetMap icmasına bir qeyd buraxın ki, başqa biri burada bir yeri əlavə etsin və ya düzəldsin.</string>
+    <string name="error_enter_correct_web">Etibarlı veb ünvan daxil edin</string>
+    <string name="error_enter_correct_email">Etibarlı e-poçt daxil edin</string>
+    <string name="error_enter_correct_facebook_page">Etibarlı Facebook veb ünvanı, hesabı və ya səhifə adı daxil edin</string>
+    <string name="error_enter_correct_instagram_page">Etibarlı Instagram istifadəçi adı və ya veb ünvanı daxil edin</string>
+    <string name="error_enter_correct_twitter_page">Etibarlı Twitter istifadəçi adı və ya veb ünvanı daxil edin</string>
+    <string name="error_enter_correct_vk_page">Etibarlı VK istifadəçi adı və ya veb ünvanı daxil edin</string>
+    <string name="error_enter_correct_line_page">Etibarlı LINE ID və ya veb ünvanı daxil edin</string>
+    <string name="placepage_add_place_button">OpenStreetMap-ə Yer Əlavə Et</string>
+    <string name="osm_note_hint">Və ya başqasının burada yer əlavə edə və ya düzəldə bilməsi üçün OpenStreetMap icmasına qeyd buraxın.</string>
     <string name="osm_note_toast">Qeyd OpenStreetMap-ə göndəriləcək</string>
     <!-- Displayed when saving some edits to the map to warn against publishing personal data -->
-    <string name="editor_share_to_all_dialog_title">Bunu bütün istifadəçilərə göndərmək istəyirsiniz?</string>
+    <string name="editor_share_to_all_dialog_title">Bütün istifadəçilərə göndərmək istəyirsiniz?</string>
     <!-- Dialog before publishing the modifications to the public map. -->
-    <string name="editor_share_to_all_dialog_message_1">Heç bir şəxsi məlumat daxil etmədiyinizə əmin olun.</string>
-    <string name="editor_share_to_all_dialog_message_2">OpenStreetMap redaktorları dəyişikliklərinizi yoxlayacaq və hər hansı sualınız olarsa, sizinlə əlaqə saxlayacaq.</string>
-    <string name="navigation_stop_button">Dayan</string>
+    <string name="editor_share_to_all_dialog_message_1">Heç bir gizli və ya şəxsi məlumat daxil etmədiyinizə əmin olun.</string>
+    <string name="editor_share_to_all_dialog_message_2">OpenStreetMap redaktorları dəyişiklikləri yoxlayacaq və hər hansı sualınız olarsa sizinlə əlaqə saxlayacaqlar.</string>
+    <string name="navigation_stop_button">Dayandır</string>
     <!-- Shown while a track is being recorded: the start toast, the notification title and the home screen widget status. -->
-    <string name="track_recording">Marşrutu qeyd etmək</string>
+    <string name="track_recording">Trek yazılır</string>
     <!-- For the first routing -->
     <string name="accept">Qəbul et</string>
     <!-- For the first routing -->
     <string name="decline">Rədd et</string>
-    <string name="mobile_data_dialog">Ətraflı məlumatı görmək üçün mobil internetdən istifadə etmək istəyirsiniz?</string>
-    <string name="mobile_data_option_always">İstənilən vaxt istifadə edin</string>
-    <string name="mobile_data_option_today">Sadəcə bu gün</string>
-    <string name="mobile_data_option_not_today">Bu gün istifadə etməyin</string>
-    <string name="mobile_data">Mobil Internet</string>
+    <string name="mobile_data_dialog">Ətraflı məlumatı göstərmək üçün mobil internetdən istifadə edilsin?</string>
+    <string name="mobile_data_option_always">Həmişə İstifadə Et</string>
+    <string name="mobile_data_option_today">Yalnız Bu Gün</string>
+    <string name="mobile_data_option_not_today">Bu Gün İstifadə Etmə</string>
+    <string name="mobile_data">Mobil İnternet</string>
     <!-- NOTE to translators: please synchronize your translation with the English one. -->
-    <string name="mobile_data_description">Xəritə yeniləmə bildirişləri və redaktələrin yüklənməsi üçün mobil internet tələb olunur.</string>
-    <string name="mobile_data_option_never">Heç vaxt istifadə etməyin</string>
-    <string name="mobile_data_option_ask">Həmişə Soruşun</string>
-    <string name="big_font">Xəritədə şrift ölçüsünü artırın</string>
-    <string name="enable_logging">Girişi aktivləşdirin</string>
+    <string name="mobile_data_description">Xəritə yeniləmə bildirişləri və redaktələri yükləmək üçün mobil internet tələb olunur.</string>
+    <string name="mobile_data_option_never">Heç Vaxt İstifadə Etmə</string>
+    <string name="mobile_data_option_ask">Həmişə Soruş</string>
+    <string name="big_font">Xəritə etiketləri üçün ölçünü böyüt</string>
+    <string name="enable_logging">Qeydiyyatı (logging) aktivləşdir</string>
     <!-- Settings: "Send general feedback" button -->
-    <string name="feedback_general">Ümumi rəy</string>
-    <string name="prefs_languages_information">Biz səsli təlimatlar üçün TTS sistemindən istifadə edirik. Əksər Android cihazları Google TTS-dən istifadə edir. Siz proqramı Google Play-dən yükləyə və ya yeniləyə bilərsiniz</string>
-    <string name="prefs_languages_information_off">Bəzi dillər üçün proqram mağazasından (Google Play, Galaxy Store, App Gallery, FDroid) fərqli nitq sintezatoru və ya əlavə dil paketi quraşdırmalı ola bilərsiniz. \nCihaz parametrləri → Dil və Daxiletmə → Nitq → Mətndən nitqə funksiyasını yandırın. \nBuradan siz nitq sintezi parametrlərini idarə edə bilərsiniz (məsələn, oflayn istifadə üçün dil paketini endirə bilərsiniz) və başqa mətndən-nitqə mühərrik seçə bilərsiniz.</string>
-    <string name="prefs_languages_information_off_link">Əlavə məlumat üçün bu təlimatı nəzərdən keçirin.</string>
-    <string name="transliteration_title">Latın transliterasiyası</string>
-    <string name="learn_more">Daha ətraflı</string>
-    <string name="placepage_remove_stop">Kəsmə nöqtəsini silin</string>
+    <string name="feedback_general">Ümumi Əks Əlaqə</string>
+    <string name="prefs_languages_information">Səsli təlimatlar üçün sistem TTS-dən istifadə edirik. Bir çox Android cihazı Google TTS istifadə edir, onu Google Play-dən yükləyə və ya yeniləyə bilərsiniz</string>
+    <string name="prefs_languages_information_off">Bəzi dillər üçün tətbiq mağazasından (Google Play, Galaxy Store, App Gallery, FDroid) nitq sintezatoru və ya əlavə dil paketi quraşdırmalısınız.\nCihazınızın tənzimləmələrini açın → Dil və daxiletmə → Nitq → Mətndən səsə çıxışı.\nBurada nitq sintezi üçün tənzimləmələri idarə edə bilərsiniz (məsələn, oflayn istifadə üçün dil paketini yükləyə bilərsiniz) və başqa mətndən-səsə mühərriki seçə bilərsiniz.</string>
+    <string name="prefs_languages_information_off_link">Əlavə məlumat üçün zəhmət olmasa bu bələdçiyə baxın.</string>
+    <string name="transliteration_title">Latın əlifbasına transliterasiya et</string>
+    <string name="learn_more">Ətraflı öyrən</string>
+    <string name="placepage_remove_stop">Dayanacağı Sil</string>
     <!-- Keep it short: route planner button below the destination, PlacePage button, search field hint and full-screen map point picker title shown while choosing another destination. The picked place becomes the new destination, the previous one becomes a stop. -->
-    <string name="route_add_destination">Təyinat əlavə et</string>
+    <string name="route_add_destination">Təyinat nöqtəsi əlavə et</string>
     <!-- Keep it short: PlacePage button, search field hint and full-screen map point picker title shown while choosing a new intermediate stop of a route. -->
-    <string name="placepage_add_stop">Dayanacaq əlavə et</string>
+    <string name="placepage_add_stop">Dayanacaq Əlavə Et</string>
     <string name="drag_to_reorder">Yenidən sırala</string>
     <!-- Alert to ask user relogin to OpenStreetMap with OAuth2 flow after OAuth1 authentication is deprecated. -->
-    <string name="alert_reauth_message">Bütün xəritə redaktələrinizi avtomatik yükləmək üçün OpenStreetMap-a daxil olun. <a href="https://github.com/organicmaps/organicmaps/issues/6144">burada</a> ətraflı məlumat əldə edin.</string>
-    <string name="dialog_error_storage_title">Yaddaş giriş problemi</string>
-    <string name="dialog_error_storage_message">Xarici yaddaş mövcud deyil, ola bilsin ki, SD Kart çıxarılıb, zədələnib və ya fayl sistemi yalnız oxunur. Zəhmət olmasa yoxlayın və ya support\@organicmaps.app ünvanında bizimlə əlaqə saxlayın</string>
-    <string name="setting_emulate_bad_storage">Zədələnmiş yaddaşı təqlid edin</string>
-    <string name="error_enter_correct_name">Düzgün ad daxil edin</string>
+    <string name="alert_reauth_message">Bütün xəritə redaktələrinizi avtomatik yükləmək üçün zəhmət olmasa OpenStreetMap-ə daxil olun. Ətraflı <a href="https://github.com/organicmaps/organicmaps/issues/6144">buradan</a> öyrənin.</string>
+    <string name="dialog_error_storage_title">Yaddaş girişi problemi</string>
+    <string name="dialog_error_storage_message">Xarici yaddaş əlçatan deyil. SD kart çıxarılmış, zədələnmiş ola bilər və ya fayl sistemi yalnız oxunabiləndir. Zəhmət olmasa SD kartınızı yoxlayın və ya support\@organicmaps.app ünvanından bizimlə əlaqə saxlayın</string>
+    <string name="setting_emulate_bad_storage">Nasaz yaddaşı simulyasiya et</string>
+    <string name="error_enter_correct_name">Zəhmət olmasa düzgün ad daxil edin</string>
     <string name="bookmark_lists">Siyahılar</string>
     <!-- Do not display all bookmark lists on the map -->
     <string name="bookmark_lists_hide_all">Hamısını gizlət</string>
     <string name="bookmark_lists_show_all">Hamısını göstər</string>
     <plurals name="bookmarks_places">
         <item quantity="one">%d əlfəcin</item>
-        <item quantity="other">%d əlfəcinlər</item>
+        <item quantity="other">%d əlfəcin</item>
     </plurals>
-    <string name="bookmarks_create_new_group">Yeni siyahı yaradın</string>
+    <string name="bookmarks_create_new_group">Yeni siyahı yarat</string>
     <!-- Bookmark categories screen, button that opens folder selection dialog to import KML/KMZ/GPX/KMB files -->
-    <string name="bookmarks_import">Əlfəcinləri və fraqmentləri idxal edin</string>
-    <string name="bookmarks_error_message_share_general">Tətbiq xətası səbəbindən paylaşmaq mümkün deyil</string>
+    <string name="bookmarks_import">Əlfəcinləri və Trekləri İdxal Et</string>
+    <string name="bookmarks_error_message_share_general">Tətbiq xətası səbəbindən paylaşılmadı</string>
     <string name="bookmarks_error_title_share_empty">Paylaşım xətası</string>
-    <string name="bookmarks_error_message_share_empty">Boş siyahı paylaşıla bilməz</string>
+    <string name="bookmarks_error_message_share_empty">Boş siyahını paylaşmaq olmaz</string>
     <string name="bookmarks_error_title_empty_list_name">Ad boş ola bilməz</string>
-    <string name="bookmarks_error_message_empty_list_name">Siyahı adını daxil edin</string>
+    <string name="bookmarks_error_message_empty_list_name">Zəhmət olmasa siyahı adını daxil edin</string>
     <string name="bookmarks_new_list_hint">Yeni siyahı</string>
-    <string name="bookmarks_error_title_list_name_already_taken">Bu ad artıq götürülüb</string>
+    <string name="bookmarks_error_title_list_name_already_taken">Bu ad artıq istifadədədir</string>
     <string name="bookmarks_error_message_list_name_already_taken">Zəhmət olmasa başqa ad seçin</string>
-    <string name="please_wait">Zəhmət olmasa, gözləyin…</string>
+    <string name="please_wait">Zəhmət olmasa gözləyin…</string>
     <string name="phone_number">Telefon nömrəsi</string>
     <string name="profile">OpenStreetMap profili</string>
     <plurals name="bookmarks_detect_message">
-        <item quantity="one">%d fayl tapıldı. Onu dönüşümdən sonra görəcəksiniz.</item>
-        <item quantity="other">%d fayl tapıldı. Onları dönüşümdən sonra görəcəksiniz.</item>
+        <item quantity="one">%d fayl tapıldı. Konvertasiyadan sonra onu görə bilərsiniz.</item>
+        <item quantity="other">%d fayl tapıldı. Konvertasiyadan sonra onları görə bilərsiniz.</item>
     </plurals>
-    <string name="restore">Bərpa</string>
+    <string name="restore">Bərpa et</string>
     <!-- Number of imported polygon areas (zones or regions) saved in a bookmark list, not their surface size. -->
     <plurals name="areas">
         <item quantity="one">%d sahə</item>
         <item quantity="other">%d sahə</item>
     </plurals>
     <plurals name="tracks">
-        <item quantity="one">%d istiqamət</item>
-        <item quantity="other">%d istiqamətlər</item>
+        <item quantity="one">%d trek</item>
+        <item quantity="other">%d trek</item>
     </plurals>
     <!-- Settings privacy group in settings screen -->
     <string name="privacy">Məxfilik</string>
-    <string name="privacy_policy">Gizlilik Siyasəti</string>
-    <string name="terms_of_use">İstifadə qaydaları</string>
-    <string name="button_layer_traffic">Nəqliyyat</string>
+    <string name="privacy_policy">Məxfilik siyasəti</string>
+    <string name="terms_of_use">İstifadə şərtləri</string>
+    <string name="button_layer_traffic">Trafik</string>
     <!-- Hiking routes layer name in the Styles and Layers dialog -->
-    <string name="button_layer_hiking">Piyada gəzinti</string>
+    <string name="button_layer_hiking">Piyada</string>
     <!-- Cycling routes layer name in the Styles and Layers dialog -->
-    <string name="button_layer_cycling">Velosiped gəzintisi</string>
+    <string name="button_layer_cycling">Velosiped</string>
     <!-- Map layers menu: toggle button for the satellite imagery layer -->
     <string name="button_layer_satellite">Peyk</string>
     <!-- Subway map layer button; also the spoken name of the subway (metro, underground) transport type, read by screen readers before a line number on transit line badges. -->
-    <string name="button_layer_subway">Metro</string>
-    <string name="layers_title">Xəritə Üslubları və Qatları</string>
+    <string name="button_layer_subway">Metropoliten</string>
+    <string name="layers_title">Xəritə Üslubları və Qatlar</string>
     <string name="bookmarks_empty_list_title">Bu siyahı boşdur</string>
-    <string name="bookmarks_empty_list_message">Əlfəcin əlavə etmək üçün xəritədə yerə və sonra ulduz işarəsinə toxunun</string>
+    <string name="bookmarks_empty_list_message">Əlfəcin əlavə etmək üçün xəritədə bir yerə toxunun və sonra ulduz ikonuna toxunun</string>
     <!-- Button to change the color of all bookmarks in the current list -->
-    <string name="change_all_bookmarks_color">Bütün əlfəcinlərin rəngini dəyişdir</string>
+    <string name="change_all_bookmarks_color">Bütün əlfəcinlərin rəngini dəyiş</string>
     <!-- Button to change the color of all tracks in the current list -->
-    <string name="change_all_tracks_color">Bütün treklərin rəngini dəyişdir</string>
+    <string name="change_all_tracks_color">Bütün treklərin rəngini dəyiş</string>
     <string name="category_desc_more">…daha çox</string>
     <!-- Menu title for exporting a file in the default KMZ format -->
-    <string name="export_file">KMZ ixrac edin</string>
+    <string name="export_file">KMZ İxrac Et</string>
     <!-- Menu title for exporting a file in GPX format -->
-    <string name="export_file_gpx">GPX ixrac edin</string>
+    <string name="export_file_gpx">GPX İxrac Et</string>
     <!-- Menu title for exporting a file in GeoJSON format -->
-    <string name="export_file_geojson">GeoJSON ixrac edin</string>
-    <string name="delete_list">Siyahını silin</string>
+    <string name="export_file_geojson">GeoJSON İxrac Et</string>
+    <string name="delete_list">Siyahını sil</string>
     <string name="speedcams_alert_title">Sürət kameraları</string>
-    <string name="place_description_title">Məkan Təsviri</string>
+    <string name="place_description_title">Yerin Təsviri</string>
     <!-- this text will be shown in application notification preferences opposite checkbox which enable/disable downloader notifications. Devices on Android 8+ are affected. -->
     <string name="notification_channel_downloader">Xəritə yükləyicisi</string>
     <!-- "Speed cameras" settings menu option (should be short! no more than 47-50 chars) to warn a driver if there is a risk of exceeding the speed limit -->
-    <string name="pref_tts_speedcams_auto">Sürətlə bağlı xəbərdarlıq edin</string>
+    <string name="pref_tts_speedcams_auto">Sürəti aşdıqda xəbərdarlıq et</string>
     <!-- Speed camera settings menu option - Always warn (about speedcams) -->
-    <string name="pref_tts_speedcams_always">Həmişə xəbərdar edin</string>
+    <string name="pref_tts_speedcams_always">Həmişə xəbərdarlıq et</string>
     <!-- Speed camera settings menu option - Never warn (about speedcams) -->
-    <string name="pref_tts_speedcams_never">Heç xəbərdar etməyin</string>
-    <string name="power_managment_title">Enerji qənaət rejimi</string>
-    <string name="power_managment_description">Bəzi funksionallıq hesabına enerji istehlakını azaltmağa çalışın.</string>
+    <string name="pref_tts_speedcams_never">Heç vaxt xəbərdarlıq etmə</string>
+    <string name="power_managment_title">Enerjiyə qənaət rejimi</string>
+    <string name="power_managment_description">Bəzi funksionallıqlar bahasına enerji sərfiyyatını azaltmağa çalışın.</string>
     <string name="power_managment_setting_never">Heç vaxt</string>
-    <string name="power_managment_setting_auto">Avtomatik</string>
-    <string name="power_managment_setting_manual_max">Maksimum enerji qənaəti</string>
+    <string name="power_managment_setting_auto">Batareya az olduqda</string>
+    <string name="power_managment_setting_manual_max">Həmişə</string>
     <!-- Settings/Bookmark Text Placement -->
-    <string name="bookmarks_text_placement_title">Xəritədə nişan adları</string>
-    <string name="bookmarks_text_placement_description">Əgər çoxlu nişanlar varsa, onların adlarını xəritədə göstərmək tətbiqin işini ləngidə bilər.</string>
+    <string name="bookmarks_text_placement_title">Xəritədə əlfəcin adları</string>
+    <string name="bookmarks_text_placement_description">Əlfəcinlər həddindən artıq çoxdursa, onların adlarının xəritədə göstərilməsi tətbiqin işini ləngidə bilər.</string>
     <string name="show_to_the_right">Sağda göstər</string>
     <string name="show_at_the_bottom">Aşağıda göstər</string>
-    <string name="enable_logging_warning_message">Yardım dialoq qutusunda “Problemi bildir” istifadə etməklə probleminizlə bağlı ətraflı diaqnostik jurnalları qeyd etmək və bizə göndərmək üçün bu seçimi müvəqqəti aktivləşdirin. Qeydlərə məkan məlumatı daxil ola bilər</string>
+    <string name="enable_logging_warning_message">Kömək dialoqundakı \"Xəta bildirin\" vasitəsilə probleminizlə bağlı ətraflı diaqnostika qeydlərini qeyd etmək və bizə əl ilə göndərmək üçün bu seçimi müvəqqəti olaraq aktivləşdirin. Qeydlərə məkan məlumatları daxil ola bilər.</string>
     <!-- Driving profile in routing options settings. -->
-    <string name="routing_options_driving">Avtomobillə</string>
+    <string name="routing_options_driving">Avtomobil</string>
     <!-- Cycling profile in routing options settings. -->
-    <string name="routing_options_cycling">Velosipedlə</string>
+    <string name="routing_options_cycling">Velosiped</string>
     <!-- Walking profile in routing options settings; also the label of a walking leg in transit route details. -->
     <string name="routing_options_walking">Piyada</string>
     <!-- Section heading for routing settings shared by every routing mode. -->
-    <string name="routing_options_all_modes">Bütün hərəkət növləri</string>
-    <string name="driving_options_title">Marşrutlaşdırma seçimləri</string>
+    <string name="routing_options_all_modes">Bütün naviqasiya rejimləri</string>
+    <string name="driving_options_title">Marşrut tənzimləmələri</string>
     <!-- Routing setting that automatically reorders intermediate stops -->
     <string name="route_optimization">Marşrutun optimallaşdırılması</string>
     <!-- Explains that route optimization automatically reorders intermediate stops -->
-    <string name="route_optimization_description">Daha səmərəli marşrut yaratmaq üçün aralıq dayanacaqları avtomatik olaraq yenidən sıralayır.</string>
+    <string name="route_optimization_description">Daha səmərəli marşrut yaratmaq üçün aralıq dayanacaqları avtomatik yenidən tənzimləyir.</string>
     <!-- Recommended length for CarPlay and Android Auto is around 25-27 characters -->
-    <string name="avoid_tolls">Rüsumlardan çəkinin</string>
+    <string name="avoid_tolls">Ödənişli yollardan yayın</string>
     <!-- Recommended length for CarPlay and Android Auto is around 25-27 characters -->
-    <string name="avoid_unpaved">Asfaltsız yollardan çəkinin</string>
+    <string name="avoid_unpaved">Torpaq yollardan yayın</string>
     <!-- Recommended length for CarPlay and Android Auto is around 25-27 characters -->
-    <string name="avoid_ferry">Bərə keçidlərindən çəkinin</string>
-    <string name="avoid_motorways">Magistral yoldan çəkinin</string>
+    <string name="avoid_ferry">Bərələrdən yayın</string>
+    <string name="avoid_motorways">Avtomagistrallardan yayın</string>
     <string name="unable_to_calc_alert_title">Marşrutu hesablamaq mümkün deyil</string>
-    <string name="unable_to_calc_alert_subtitle">Təəssüf ki, seçdiyiniz seçimlərə görə marşrut tapa bilmədik. Seçimləri dəyişdirin və yenidən cəhd edin</string>
-    <string name="toll_road">Ücrətli yol</string>
-    <string name="unpaved_road">Asfaltsız yol</string>
+    <string name="unable_to_calc_alert_subtitle">Marşrut tapılmadı. Bu, marşrut tənzimləmələriniz və ya natamam OpenStreetMap məlumatları səbəbindən baş verə bilər. Zəhmət olmasa marşrut tənzimləmələrinizi dəyişdirin və yenidən cəhd edin.</string>
+    <string name="toll_road">Ödənişli yol</string>
+    <string name="unpaved_road">Torpaq yol</string>
     <string name="ferry_crossing">Bərə keçidi</string>
     <!-- Route warning shown on the map for this obstacle type. -->
-    <string name="road_warning_steps">Pilləkənlər</string>
+    <string name="road_warning_steps">Pərçimlər / Pilləkənlər</string>
     <!-- Route warning shown on the map for this obstacle type. -->
-    <string name="road_warning_gate">Qapı</string>
+    <string name="road_warning_gate">Darvaza</string>
     <!-- Route warning shown on the map for this obstacle type. -->
     <string name="road_warning_lift_gate">Şlaqbaum</string>
     <!-- A generic "Yes" button in dialogs -->
     <string name="yes">Bəli</string>
     <!-- A generic "No" button in dialogs -->
-    <string name="no">Yox</string>
+    <string name="no">Xeyr</string>
     <!-- E.g. "WiFi:Yes" -->
-    <string name="yes_available">Var</string>
+    <string name="yes_available">Bəli</string>
     <!-- E.g. "WiFi:No" -->
-    <string name="no_available">Yox</string>
+    <string name="no_available">Xeyr</string>
     <!-- To indicate the capacity of car parkings, bicycle parkings, electric vehicle charging stations… -->
-    <string name="capacity">Sıxlıq: %s</string>
+    <string name="capacity">Tutum: %s</string>
     <!-- To indicate the network of ATMs, bicycle rentals, electric vehicle charging stations… -->
     <string name="network">Şəbəkə: %s</string>
-    <string name="trip_finished">Sən gəldin!</string>
-    <string name="ok">Yaxşı</string>
+    <string name="trip_finished">Çatdınız!</string>
+    <string name="ok">Oldu</string>
     <!-- max. 10 symbols, both iOS and Android -->
-    <string name="sort">Çeşid…</string>
+    <string name="sort">Sırala…</string>
     <!-- Android, title, max 20-22 symbols -->
-    <string name="sort_bookmarks">Əlfəcinləri çeşidləyin</string>
+    <string name="sort_bookmarks">Əlfəcinləri sırala</string>
     <!-- Android -->
-    <string name="by_default">Defoltolaraq</string>
+    <string name="by_default">Varsayılan olaraq</string>
     <!-- Android -->
-    <string name="by_type">Növünə görə</string>
+    <string name="by_type">Növə görə</string>
     <!-- Android -->
     <string name="by_distance">Məsafəyə görə</string>
     <!-- Android -->
-    <string name="by_date">Tarixə görə</string>
+    <string name="by_date">T tarixə görə</string>
     <!-- Android -->
     <string name="by_name">Ada görə</string>
     <string name="week_ago_sorttype">Bir həftə əvvəl</string>
     <string name="month_ago_sorttype">Bir ay əvvəl</string>
     <string name="moremonth_ago_sorttype">Bir aydan çox əvvəl</string>
     <string name="moreyear_ago_sorttype">Bir ildən çox əvvəl</string>
-    <string name="near_me_sorttype">Mənə yaxın</string>
+    <string name="near_me_sorttype">Yaxınlığımda</string>
     <string name="others_sorttype">Digərləri</string>
     <!-- Place Page opening hours text -->
     <string name="closed_now">İndi bağlıdır</string>
-    <string name="opens_tomorrow_at">Sabah açılır %s</string>
-    <string name="opens_dayoftheweek_at">%1$s %2$s açılır</string>
-    <string name="opens_at">Açılır %s</string>
-    <string name="closes_at">Bağlanır %s</string>
-    <string name="editor_add_select_category_all_subtitle">Bütün kateqoriyalar</string>
-    <string name="placepage_replace_stop">Duruşu əvəz et</string>
+    <string name="opens_tomorrow_at">Sabah saat %s-də açılır</string>
+    <string name="opens_dayoftheweek_at">%1$s günü saat %2$s-də açılır</string>
+    <string name="opens_at">Saat %s-də açılır</string>
+    <string name="closes_at">Saat %s-də bağlanır</string>
+    <string name="editor_add_select_category_all_subtitle">Bütün Kateqoriyalar</string>
+    <string name="placepage_replace_stop">Dayanacağı Əvəz Et</string>
 
     <!-- SECTION: Bookmark types used for sorting -->
     <string name="food_places">Qida</string>
@@ -722,142 +722,148 @@
     <string name="hotels">Otellər</string>
     <string name="buildings">Binalar</string>
     <string name="money">Pul</string>
-    <string name="shops">Ticarət mərkəzləri</string>
+    <string name="shops">Mağazalar</string>
     <string name="parkings">Dayanacaqlar</string>
-    <string name="fuel_places">Yanacaqdoldurma məntəqələri</string>
-    <string name="medicine">Dərman</string>
-    <string name="search_in_the_list">Siyahıda axtarın</string>
+    <string name="fuel_places">Yanacaqdoldurma Məntəqələri</string>
+    <string name="medicine">Təbabət</string>
+    <string name="search_in_the_list">Siyahıda axtar</string>
     <string name="religious_places">Dini yerlər</string>
     <!-- Button that starts multi-selection in a bookmark list. -->
     <string name="select">Seç</string>
     <!-- Action that selects every bookmark and track in a bookmark list. -->
-    <string name="select_all">Hamısını seç</string>
+    <string name="select_all">Hamısını Seç</string>
     <!-- Action that clears the multi-selection in a bookmark list. -->
-    <string name="deselect_all">Seçimi ləğv et</string>
-    <string name="select_list">Siyahı seçin</string>
+    <string name="deselect_all">Seçimi Ləğv Et</string>
+    <string name="select_list">Siyahı seç</string>
     <!-- Layers menu: label of the 3D terrain layer button -->
-    <string name="button_layer_terrain">3D relyef</string>
+    <string name="button_layer_terrain">3D Relyef</string>
     <string name="isolines_location_error_dialog">Kontur xətlərini görmək üçün bu bölgəni yeniləyin</string>
-    <string name="elevation_profile_ascent">Qalxmaq</string>
+    <string name="elevation_profile_ascent">Yoxuş</string>
     <string name="elevation_profile_descent">Eniş</string>
     <string name="elevation_profile_min_elevation">Min. hündürlük</string>
     <string name="elevation_profile_max_elevation">Maks. hündürlük</string>
     <string name="elevation_profile_difficulty">Çətinlik</string>
-    <string name="isolines_toast_zooms_1_10">İzohipləri görmək üçün xəritəni böyüdün</string>
-    <string name="downloader_loading_ios">Endirilir</string>
-    <string name="download_map_title">Dünya xəritəsini yükləyin</string>
+    <string name="isolines_toast_zooms_1_10">İzoxətləri araşdırmaq üçün böyudün</string>
+    <string name="downloader_loading_ios">Yüklənir</string>
+    <string name="download_map_title">Dünya icmal xəritəsini yükləyin</string>
     <!-- Used in DownloadResources startup screen -->
-    <string name="disk_error">Qovluq yaratmaq və faylları daxili cihazın yaddaşında və ya SD kartda köçürmək mümkün deyil</string>
+    <string name="disk_error">Daxili cihaz yaddaşında və ya sdcard-da qovluq yaratmaq və faylları köçürmək mümkün deyil</string>
     <!-- Used in DownloadResources startup screen -->
-    <string name="disk_error_title">Disk xətası</string>
+    <string name="disk_error_title">Disksiz xətası</string>
     <!-- Used in DownloadResources startup screen -->
-    <string name="connection_failure">Əlaqə xətası</string>
+    <string name="connection_failure">Bağlantı xətası</string>
     <!-- Used in DownloadResources startup screen -->
     <string name="disconnect_usb_cable_title">USB kabelini ayırın</string>
-    <string name="enable_keep_screen_on">Ekranı açıq saxlayın</string>
+    <string name="enable_keep_screen_on">Ekranı açıq saxla</string>
     <!-- Description in preferences -->
-    <string name="enable_keep_screen_on_description">Aktiv edildikdə, xəritəyə baxarkən ekran həmişə açıq olacaq.</string>
+    <string name="enable_keep_screen_on_description">Aktivləşdirildikdə, xəritə göstərilərkən ekran həmişə açıq olacaq.</string>
     <!-- A preference title; keep short! -->
-    <string name="enable_show_on_lock_screen">Kilid ekranında göstərin</string>
+    <string name="enable_show_on_lock_screen">Kilid ekranında göstər</string>
     <!-- Description in preferences -->
-    <string name="enable_show_on_lock_screen_description">Aktivləşdirildikdən sonra proqram hər dəfə işlədikcə cihazınızın kilidini açmağa ehtiyac qalmayacaq.</string>
+    <string name="enable_show_on_lock_screen_description">Aktivləşdirildikdə, tətbiq cihaz kilidli olsa belə kilid ekranında işləyəcək.</string>
     <!-- Current language of the map! -->
     <string name="change_map_locale">Xəritə dili</string>
     <!-- OpenStreetMap text on splash screen -->
-    <string name="splash_subtitle">OpenStreetMap-dan xəritə məlumatları</string>
+    <string name="splash_subtitle">OpenStreetMap-dən xəritə məlumatları</string>
     <!-- Telegram group url for the "?" About page -->
-    <string name="telegram_url">https://t.me/OrganicMapsTR</string>
+    <string name="telegram_url">https://t.me/OrganicMapsApp</string>
+    <!-- Instagram account url for the "?" About page -->
+    <string name="instagram_url">https://www.instagram.com/organicmaps.app</string>
+    <!-- A link to the TTS FAQ -->
+    <string name="tts_info_link">https://organicmaps.app/faq/text-to-speech-android-tts/</string>
+    <!-- Include only languages supported on the website, add new translations here: https://github.com/organicmaps/website/tree/master/content -->
+    <string name="translated_om_site_url">https://organicmaps.app/</string>
     <!-- Link to OSM wiki for Editor, Profile and About pages -->
-    <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/Tr:About</string>
+    <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/About_OpenStreetMap</string>
     <!-- A number of bookmarks and a number of tracks, separated by comma, like: 1 bookmark, 5 tracks -->
     <string name="comma_separated_pair">%1$s, %2$s</string>
     <!-- App Tip #00 -->
-    <string name="app_tip_00">İcma tərəfindən yaradılmış xəritələrimizdən istifadə etdiyiniz üçün təşəkkür edirik!</string>
+    <string name="app_tip_00">İcma tərəfindən qurulmuş xəritələrimizdən istifadə etdiyiniz üçün təşəkkür edirik!</string>
     <!-- App tip #01 -->
-    <string name="app_tip_01">Sizin ianələriniz və dəstəyinizlə biz dünyanın ən yaxşı xəritələrini yarada bilərik!</string>
+    <string name="app_tip_01">İanələriniz və dəstəyinizlə dünyanın ən yaxşı xəritələrini yarada bilərik!</string>
     <!-- App tip #02 -->
-    <string name="app_tip_02">Tətbiqimizi bəyənirsiniz? İnkişafı dəstəkləmək üçün ianə edin! Hələ bəyənmirsiniz? Niyə belə olduğunu bizə bildirin, biz də düzəldək!</string>
+    <string name="app_tip_02">Tətbiqimizi bəyənirsiniz? İnkişafı dəstəkləmək üçün zəhmət olmasa ianə edin! Hələ bəyənmirsiniz? Zəhmət olmasa səbəbini bizə bildirin, biz onu düzəldəcəyik!</string>
     <!-- App tip #03 -->
-    <string name="app_tip_03">Əgər proqram tərtibatçısını tanıyırsınızsa, ona ehtiyac duyduğunuz funksiyanı əlavə etməsini xahiş edə bilərsiniz.</string>
+    <string name="app_tip_03">Proqram təminatı tərtibatçısı tanıyırsınızsa, lazım olan funksiyanı həyata keçirməsini xahiş edə bilərsiniz.</string>
     <!-- App tip #04 -->
-    <string name="app_tip_04">Nəyisə seçmək üçün xəritədə istənilən yerə toxunun. Gizlətmək və interfeysi geri göstərmək üçün uzun müddət toxunun.</string>
+    <string name="app_tip_04">Hər hansı bir şeyi seçmək üçün xəritədə istənilən yerə toxunun. İnterfeys gizlətmək və göstərmək üçün uzun toxunmadan istifadə olunur.</string>
     <!-- App tip #05 -->
-    <string name="app_tip_05">Xəritədə cari yerinizi seçə biləcəyinizi bilirdinizmi?</string>
+    <string name="app_tip_05">Bilirsinizmi ki, xəritədə cari yeriniz seçilə bilər?</string>
     <!-- App tip #06 -->
-    <string name="app_tip_06">Tətbiqimizi dilinizə tərcümə etməyə kömək edə bilərsiniz.</string>
+    <string name="app_tip_06">Tətbiqimizi öz dilinizə tərcümə etməyə kömək edə bilərsiniz.</string>
     <!-- App tip #07 -->
-    <string name="app_tip_07">Tətbiqimiz bir neçə həvəskar və icma tərəfindən hazırlanıb.</string>
+    <string name="app_tip_07">Tətbiqimiz bir neçə həvəskar və icma tərəfindən hazırlanmışdır.</string>
     <!-- App tip #08 -->
     <string name="app_tip_08">Xəritə məlumatlarını asanlıqla düzəldə və təkmilləşdirə bilərsiniz.</string>
     <!-- App tip #09 -->
-    <string name="app_tip_09">Əsas məqsədimiz sizin sevəcəyiniz sürətli, məxfiliyə yönəlmiş, istifadəsi asan xəritələr yaratmaqdır.</string>
+    <string name="app_tip_09">Əsas məqsədimiz sevəcəyiniz sürətli, məxfiliyə yönəlmiş, istifadəsi asan xəritələr qurmaqdır.</string>
     <!-- Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen -->
-    <string name="car_used_on_the_phone_screen">İndi telefon ekranında Organic Maps istifadə edirsiniz</string>
+    <string name="car_used_on_the_phone_screen">İndi siz telefon ekranında Organic Maps-dən istifadə edirsiniz</string>
     <!-- Text on the phone placeholder screen that maps are displayed on the car screen -->
-    <string name="car_used_on_the_car_screen">Hazırda avtomobil ekranında Organic Maps istifadə edirsiniz</string>
+    <string name="car_used_on_the_car_screen">İndi siz avtomobil ekranında Organic Maps-dən istifadə edirsiniz</string>
     <!-- Displayed on the phone screen. Android Auto connected -->
-    <string name="aa_connected_title">Siz Android Auto-a qoşulmusunuz</string>
+    <string name="aa_connected_title">Android Auto-ya qoşulmusunuz</string>
     <!-- Displayed on the phone screen. Button to display maps on the phone screen instead of a car -->
-    <string name="car_continue_on_the_phone">Telefonda davam edin</string>
+    <string name="car_continue_on_the_phone">ிகTelefonda davam et</string>
     <!-- Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
     <string name="car_continue_in_the_car">Avtomobil ekranına</string>
     <!-- Ask user to grant location permissions -->
-    <string name="aa_location_permissions_request">Organic Maps Məkan məlumatlarına giriş tələb olunur. Təhlükəsiz olduqda telefonunuzdakı bildirişi yoxlayın.</string>
+    <string name="aa_location_permissions_request">Organic Maps məkan girişinə ehtiyac duyur. Təhlükəsiz olduqda telefonunuzdakı bildirişi yoxlayın.</string>
     <!-- Notification title for permission request from AA. -->
-    <string name="aa_request_permission_notification">Bu tətbiq sizin icazənizə ehtiyac duyur</string>
+    <string name="aa_request_permission_notification">Bu tətbiqin icazənizə ehtiyacı var</string>
     <!-- Grant Permissions button. -->
-    <string name="aa_grant_permissions">İcazələr verin</string>
+    <string name="aa_grant_permissions">İcazə Ver</string>
     <!-- Outdoors/hiking map style (activity) name in the Styles and Layers dialog -->
-    <string name="button_layer_outdoor">Yürüyüş</string>
+    <string name="button_layer_outdoor">Açıq Hava</string>
     <!-- Text displayed when a webview or a browser are disabled, and external links can't be opened. -->
-    <string name="browser_not_available">Veb brauzer mövcud deyil</string>
-    <string name="volume">Həcm</string>
+    <string name="browser_not_available">Veb-brauzer əlçatan deyil</string>
+    <string name="volume">Səs</string>
     <!-- Bookmark categories screen, button that opens share dialog to export all bookmarks and tracks -->
-    <string name="bookmarks_export">Bütün Əlfəcinləri və Parçaları ixrac edin</string>
+    <string name="bookmarks_export">Bütün Əlfəcinləri və Trekləri İxrac Et</string>
     <!-- button in (app) TTS settings, to open the system TTS settings. -->
-    <string name="pref_tts_open_system_settings">Sistem nitq sintezi parametrləri</string>
+    <string name="pref_tts_open_system_settings">Nitq sintezi sistem tənzimləmələri</string>
     <!-- toast displayed when pressing the "Speech synthesis system settings" button, and the system settings aren't found. -->
-    <string name="pref_tts_no_system_tts">Nitq sintezi parametrləri tapılmadı, cihazınızın bunu dəstəklədiyinə əminsiniz?</string>
-    <string name="drive_through">Sürüşmə</string>
-    <string name="clear_the_search">Axtarışı təmizləyin</string>
+    <string name="pref_tts_no_system_tts">Nitq Sintezi tənzimləmələri tapılmadı, cihazınızın bunu dəstəklədiyinə əminsinizmi?</string>
+    <string name="drive_through">Avtomobildən sifariş (Drive-through)</string>
+    <string name="clear_the_search">Axtarışı təmizlə</string>
     <!-- Accessibility text for the zoom-in button on the map and visible title for the CarPlay dashboard button. Keep it short. -->
-    <string name="zoom_in">Yaxınlaşdırma</string>
+    <string name="zoom_in">Yaxınlaşdır</string>
     <!-- Accessibility text for the zoom-out button on the map and visible title for the CarPlay dashboard button. Keep it short. -->
-    <string name="zoom_out">Küçült</string>
+    <string name="zoom_out">Uzaqlaşdır</string>
     <!-- Restaurant or other food place's menu URL field in the Editor -->
-    <string name="website_menu">Menyu keçidi</string>
+    <string name="website_menu">Menyu Keçidi</string>
     <!-- Button in the Place Page which opens a restaurant or other food place's menu in a browser -->
-    <string name="view_menu">Menyuya baxın</string>
+    <string name="view_menu">Menyuya Bax</string>
     <!-- To indicate if the place proposed self service… -->
     <string name="self_service">Özünəxidmət</string>
-    <string name="select_option">Seçim seçin</string>
+    <string name="select_option">Seçim edin</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
-    <string name="outdoor_seating">Çöldə oturma</string>
+    <string name="outdoor_seating">Çöldə oturacaqlar</string>
     <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">Ən dəqiq naviqasiya üçün telefonun batareya parametrlərində enerjiyə qənaət rejimini söndürməyi tövsiyə edirik.</string>
+    <string name="power_save_dialog_summary">Ən dəqiq naviqasiya üçün telefonun batareya tənzimləmələrində enerjiyə qənaət rejimini qapatmağı tövsiyə edirik.</string>
     <!-- Title of the one-time warning about battery optimization when starting track recording on Android. -->
-    <string name="background_recording_warning_title">Arxa planda qeyd barədə xəbərdarlıq</string>
+    <string name="background_recording_warning_title">Fon Qeyd Edilməsi Xəbərdarlığı</string>
     <!-- One-time warning when starting track recording on Android. "Never sleeping apps" is a Samsung setting. The Settings button opens Samsung's list when available, with fallbacks to Android battery optimization settings or general settings. -->
-    <string name="background_recording_warning_message">Ekran söndürüldükdə marşrutun qeydinin dayanmaması üçün Organic Maps-i batareya optimallaşdırmasından istisna edin. Samsung cihazlarında onu «Heç vaxt yuxu rejiminə keçməyən tətbiqlər» siyahısına əlavə edin.</string>
+    <string name="background_recording_warning_message">Ekran söndürüldükdə trek yazılışının dayanmasının qarşısını almaq üçün zəhmət olmasa Organic Maps-i batareya optimizasiyasından kənarda saxlayın. Samsung cihazlarında onu \"Heç vaxt yuxuya getməyən tətbiqlər\" siyahısına əlavə edin.</string>
     <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">Marşrut qeydi</string>
+    <string name="start_track_recording">Trek Yaz</string>
     <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">Marşrut qeydini dayandır</string>
+    <string name="stop_track_recording">Trek Yazılışını Dayandır</string>
     <!-- Subtitle of the place page of the track being recorded, and the name and title of the home screen widget. -->
-    <string name="track_recording_title">Marşrut yazısı</string>
+    <string name="track_recording_title">Trek Yazılışı</string>
     <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">Marşrut boşdur - saxlamaq üçün heç nə yoxdur</string>
+    <string name="track_recording_toast_nothing_to_save">Trek boşdur - saxlanılacaq heç nə yoxdur</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
-    <string name="error_no_file_manager_app">Qovluq seçimi dialoqunu göstərmək mümkün deyil, çünki cihazınızda uyğun proqram quraşdırılmayıb. Lütfən, fayl meneceri proqramı quraşdırın və yenidən cəhd edin</string>
-    <string name="choose_color">Rəngi seçin</string>
-    <string name="edit_track">Marşrutu redaktə edin</string>
-    <string name="uri_open_location_failed">Məkanı aça biləcək proqram quraşdırılmayıb</string>
+    <string name="error_no_file_manager_app">Uyğun tətbiq quraşdırılmadığı üçün qovluq seçimi dialoqu göstərilə bilmir. Zəhmət olmasa fayl meneceri tətbiqi quraşdırın və yenidən cəhd edin.</string>
+    <string name="choose_color">Rəng Seçin</string>
+    <string name="edit_track">Treki Redaktə Et</string>
+    <string name="uri_open_location_failed">Məkanı ata biləcək quraşdırılmış tətbiq yoxdur</string>
     <!-- Setting option to sync the app's theme with the operating system's dark/light mode -->
-    <string name="follow_system">Sistemə uyğun</string>
+    <string name="follow_system">Sistemi izlə</string>
     <!-- Title of the bottom sheet when sharing the track -->
-    <string name="share_track">Yolunu paylaş</string>
+    <string name="share_track">Treki Paylaş</string>
     <!-- Title for the dialog when deleting a track with the track name passed in %@ -->
-    <string name="delete_track_dialog_title">%s silmək?</string>
+    <string name="delete_track_dialog_title">%s silinsin?</string>
     <!-- Bookmark list title in multi-selection mode. %d is the number of selected bookmarks and tracks. -->
     <plurals name="n_items_selected">
         <item quantity="one">%d seçildi</item>
@@ -865,17 +871,17 @@
     </plurals>
     <!-- Title for the dialog when deleting several bookmarks and tracks at once. %d is their number. -->
     <plurals name="delete_n_items_dialog_title">
-        <item quantity="one">%d element silmək?</item>
-        <item quantity="other">%d element silmək?</item>
+        <item quantity="one">%d element silinsin?</item>
+        <item quantity="other">%d element silinsin?</item>
     </plurals>
     <!-- move track or bookmark from the list button text -->
-    <string name="move">Hərəkət edin</string>
+    <string name="move">Köçür</string>
     <!-- Text for the editing the Track's color button. -->
-    <string name="change_color">Rəng dəyişdirin</string>
+    <string name="change_color">Rəngi Dəyiş</string>
     <!-- Text for the hiding track. -->
-    <string name="hide_track">İzi gizlədin</string>
+    <string name="hide_track">Treki gizlət</string>
     <!-- Text for the showing track. -->
-    <string name="show_track">İzi göstər</string>
+    <string name="show_track">Treki göstər</string>
 
     <!-- SECTION: Uncategorized -->
     <!-- Short label of the user's position marker on the elevation profile chart. Where a bare pronoun would be unnatural or gendered, a location noun ("My location") is preferred. -->
@@ -883,7 +889,7 @@
 
     <!-- SECTION: gps strings -->
     <!-- Editor section title that shows recently used categories (types of objects) when adding a place on the map -->
-    <string name="editor_add_select_category_recent_subtitle">Son istifadə olunan</string>
+    <string name="editor_add_select_category_recent_subtitle">Son İstifadə Olunanlar</string>
     <!-- Toast message shown when bookmark colors are changed in category settings -->
     <string name="toast_bookmarks_color_changed">Əlfəcinlərin rəngi dəyişdirildi</string>
     <!-- Toast message shown when track colors are changed in category settings -->
@@ -891,25 +897,25 @@
     <!-- Tab label for the spectrum color picker mode -->
     <string name="color_picker_spectrum">Spektr</string>
     <!-- Tab label for the RGB sliders color picker mode -->
-    <string name="color_picker_sliders">Slayderlər</string>
+    <string name="color_picker_sliders">Sürgülər</string>
     <!-- Label for the red channel slider in the color picker -->
     <string name="color_picker_red">QIRMIZI</string>
     <!-- Label for the green channel slider in the color picker -->
     <string name="color_picker_green">YAŞIL</string>
     <!-- Label for the blue channel slider in the color picker -->
-    <string name="color_picker_blue">MƏRƏKƏBƏ</string>
+    <string name="color_picker_blue">GÖY</string>
     <!-- Label for the hex color input field in the color picker -->
     <string name="color_picker_hex_label">sRGB Hex Rəng #</string>
     <!-- Tab label for the grid color picker mode -->
     <string name="color_picker_grid">Şəbəkə</string>
     <!-- Accessibility label for the voice-search mic button in the search bar -->
-    <string name="voice_search">Səsli axtarış</string>
+    <string name="voice_search">Səslə axtarış</string>
     <!-- Accessibility label of the icon-only button beside the search field, shown while choosing or replacing a route point; it opens a full-screen map picker with a crosshair -->
     <string name="choose_on_map">Xəritədə seçin</string>
     <!-- Search field hint and full-screen map point picker title shown while choosing the starting point of a route. Kept short because shortcut and voice-search buttons narrow the field -->
-    <string name="choose_start_location">Başlanğıc</string>
+    <string name="choose_start_location">Başlanğıc nöqtəsi</string>
     <!-- Search field hint and full-screen map point picker title shown while choosing the destination of a route. Kept short because shortcut and voice-search buttons narrow the field -->
-    <string name="choose_destination">Təyinat</string>
+    <string name="choose_destination">Təyinat nöqtəsi</string>
     <!-- Search field hint and full-screen map point picker title shown while replacing the already set starting point of a route. Kept short because shortcut and voice-search buttons narrow the field -->
     <string name="change_start_location">Başlanğıcı dəyiş</string>
     <!-- Search field hint and full-screen map point picker title shown while replacing the already set destination of a route. Kept short because shortcut and voice-search buttons narrow the field -->
@@ -917,17 +923,17 @@
     <!-- Search field hint and full-screen map point picker title shown while replacing an already added intermediate stop of a route. Kept short because shortcut and voice-search buttons narrow the field -->
     <string name="change_stop_along_route">Dayanacağı dəyiş</string>
     <!-- Toast shown when the user tries to add one more intermediate stop to a route that already holds the maximum allowed number -->
-    <string name="routing_max_stops_reached">Dayanacaqların maksimum sayı doldu</string>
+    <string name="routing_max_stops_reached">Maksimum dayanacaq sayına çatıldı</string>
     <!-- Hint under the title of the full-screen route point picker: a crosshair stays fixed in the centre of the screen while the user moves the map under it -->
-    <string name="choose_point_on_map_hint">Xaç işarəsini yerləşdirmək üçün xəritəni hərəkət etdirin və yaxınlaşdırın</string>
+    <string name="choose_point_on_map_hint">Çarpaz işarəni yerləşdirmək üçün xəritəni hərəkət etdirin və böyudün</string>
     <!-- Track recording notification button: stops the recording and saves the recorded track. -->
-    <string name="track_recording_stop_and_save">Dayandırın və yadda saxlayın</string>
+    <string name="track_recording_stop_and_save">Dayandır və Saxla</string>
     <!-- Track recording home screen widget button: opens the app to save or delete the recorded track. -->
     <string name="track_recording_finish">Bitir</string>
     <!-- Accessibility label for the button that reverses the complete planned route, including intermediate stops. -->
-    <string name="reverse_route">Marşrutu tərsinə çevir</string>
+    <string name="reverse_route">Marşrutu əksinə çevir</string>
     <!-- Title of the transit route details screen, shown when the user taps the public transport summary tile. -->
-    <string name="transit_details_title">Səyahət təfərrüatları</string>
+    <string name="transit_details_title">İctimai nəqliyyat təfərrüatları</string>
     <!-- Heading for a user-added intermediate point (Add Stop) in the transit details breakdown (%1$d = its order in the route, starting at 1). -->
     <string name="transit_waypoint_label">Dayanacaq %1$d</string>
     <!-- Number of stops ridden on a single transit line. -->
